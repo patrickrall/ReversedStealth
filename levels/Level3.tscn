@@ -26,7 +26,7 @@ mesh = SubResource("QuadMesh_60v5h")
 
 [node name="Goal" parent="." instance=ExtResource("2_xwkyu")]
 position = Vector2(398, 28)
-next_scene = "/home/prall/ReversedStealth/levels/Level0.tscn"
+monitorable = false
 
 [node name="Lights" type="Node" parent="."]
 

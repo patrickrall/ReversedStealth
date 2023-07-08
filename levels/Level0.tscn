@@ -76,7 +76,7 @@ texture = ExtResource("2_h7wwb")
 
 [node name="Goal" parent="." instance=ExtResource("3_dabo8")]
 position = Vector2(228, 37)
-next_scene = "/home/prall/ReversedStealth/levels/Level1.tscn"
+next_scene = "res://levels/Level1.tscn"
 
 [node name="Walls" type="Node" parent="."]
 

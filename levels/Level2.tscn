@@ -26,7 +26,7 @@ mesh = SubResource("QuadMesh_60v5h")
 
 [node name="Goal" parent="." instance=ExtResource("2_4yo0q")]
 position = Vector2(187, -130)
-next_scene = "/home/prall/ReversedStealth/levels/Level3.tscn"
+next_scene = "res://levels/Level3.tscn"
 
 [node name="Lights" type="Node" parent="."]
 
@@ -61,7 +61,7 @@ rotation = 0.0246863
 vision_length = 0
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(412.018, 15.3541)
+position = Vector2(412.018, 15.3558)
 rotation = -1.63273
 progress = 2348.56
 

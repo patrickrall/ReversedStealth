@@ -2,7 +2,7 @@
 
 extends Area2D
 
-@export_global_file("*.tscn") var next_scene 
+@export var next_scene : String = "res://levels/Level0.tscn"
 
 
 func _on_body_entered(body):
