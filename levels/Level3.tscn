@@ -54,9 +54,9 @@ script = ExtResource("4_x35m6")
 speed = 5.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(-111.11, -68.4753)
-rotation = -1.39874
-progress = 322.624
+position = Vector2(-111.111, -68.4714)
+rotation = -1.39875
+progress = 322.62
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("5_bbd7l")]
 scale = Vector2(0.904, 0.904)
