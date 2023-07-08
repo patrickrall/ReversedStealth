@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=3 uid="uid://bflxr2swrv3xt"]
+
+[ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
+[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="2_gp7r1"]
+[ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
+[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="4_5yfvo"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_60v5h"]
+size = Vector2(640, 480)
+
+[node name="Level" type="Node2D"]
+position = Vector2(172, 198)
+script = ExtResource("1_pgwok")
+
+[node name="Floor" type="MeshInstance2D" parent="."]
+position = Vector2(148, 42)
+mesh = SubResource("QuadMesh_60v5h")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(85, 104)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(137, 275)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(279, 390)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(356, 113)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(443, 325)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+position = Vector2(601, 248)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(554, 105)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5yfvo")
+
+[node name="Goal" parent="." instance=ExtResource("3_frnse")]
+position = Vector2(366, -112)
+next_scene = "/home/prall/ReversedStealth/levels/Level2.tscn"
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="BasicWall6" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(313, 287)
+scale = Vector2(1, 18.2)
+opaque = false
+
+[node name="BasicWall7" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(447, 138)
+scale = Vector2(1, 11.8)
+
+[node name="BasicWall10" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(167, 138)
+scale = Vector2(1, 11.8)
+opaque = false
+
+[node name="BasicWall11" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(106, 303)
+scale = Vector2(1, 4.56)
+opaque = false
+
+[node name="BasicWall12" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(170, 398)
+scale = Vector2(1, 8)
+opaque = false
+
+[node name="BasicWall13" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(235, 297)
+scale = Vector2(1, 4.56)
+opaque = false
+
+[node name="BasicWall15" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(396, 305)
+scale = Vector2(1, 4.56)
+
+[node name="BasicWall16" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(466, 419)
+scale = Vector2(1, 4.56)
+
+[node name="BasicWall17" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(543, 309)
+scale = Vector2(1, 4.56)
+
+[node name="BasicWall8" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(467, 262)
+scale = Vector2(7.65217, 0.845715)
+
+[node name="BasicWall9" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(167, 249)
+scale = Vector2(7.65217, 0.845715)
+opaque = false
+
+[node name="BasicWall14" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(342, 217)
+scale = Vector2(3.05217, 0.845715)
+opaque = false
+
+[node name="BasicWall2" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(325, 12)
+scale = Vector2(32.92, 2.04)
+
+[node name="BasicWall3" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(320, 470)
+scale = Vector2(32.92, 2.04)
+
+[node name="BasicWall4" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(-10, 252)
+scale = Vector2(1.96, 26.8)
+
+[node name="BasicWall5" parent="Walls" instance=ExtResource("2_gp7r1")]
+position = Vector2(654, 252)
+scale = Vector2(1.96, 26.8)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-85, -94)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 138.0
+offset_top = -155.0
+offset_right = 248.0
+offset_bottom = -103.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "If you are lost,
+ press \"home\""

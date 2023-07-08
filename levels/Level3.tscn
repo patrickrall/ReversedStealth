@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr0i1wd8yvkns"]
+
+[ext_resource type="Script" path="res://src/Level.gd" id="1_npwgv"]
+[ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="2_xwkyu"]
+[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="3_wigh7"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="4_x35m6"]
+[ext_resource type="PackedScene" uid="uid://c5ubb3rxfwlbc" path="res://subscenes/GuardLight.tscn" id="5_bbd7l"]
+[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="6_tm8n2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_60v5h"]
+size = Vector2(640, 480)
+
+[sub_resource type="Curve2D" id="Curve2D_w5riq"]
+_data = {
+"points": PackedVector2Array(56.1266, 88.8303, -56.1266, -88.8303, -78.75, 247.5, -55.9499, 59.0501, 55.9499, -59.0501, -76.25, -160, -26.9702, -37.9945, 26.9702, 37.9945, 192.5, -155, 46.8458, -52.1491, -46.8458, 52.1491, 198.75, 217.5, 46.4039, 34.9134, -46.4039, -34.9134, -78.75, 247.5)
+}
+point_count = 5
+
+[node name="Level" type="Node2D"]
+position = Vector2(172, 198)
+script = ExtResource("1_npwgv")
+
+[node name="Floor" type="MeshInstance2D" parent="."]
+position = Vector2(148, 42)
+mesh = SubResource("QuadMesh_60v5h")
+
+[node name="Goal" parent="." instance=ExtResource("2_xwkyu")]
+position = Vector2(398, 28)
+next_scene = "/home/prall/ReversedStealth/levels/Level0.tscn"
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(67, 239)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_wigh7")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(589, 249)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_wigh7")
+
+[node name="AnimatedPath" type="Path2D" parent="Lights"]
+position = Vector2(282, 211)
+scale = Vector2(0.8, 0.8)
+curve = SubResource("Curve2D_w5riq")
+script = ExtResource("4_x35m6")
+speed = 5.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(-111.11, -68.4753)
+rotation = -1.39874
+progress = 322.624
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("5_bbd7l")]
+scale = Vector2(0.904, 0.904)
+angle = 67
+vision_length = 104
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(201.198, 214.479)
+rotation = 2.20503
+progress = 1083.89
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("5_bbd7l")]
+scale = Vector2(0.70034, 0.702469)
+angle = 77
+vision_length = 132
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="BasicWall9" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(155, 79)
+scale = Vector2(1, 11.8)
+
+[node name="BasicWall11" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(493, 83)
+scale = Vector2(1, 11.8)
+
+[node name="BasicWall13" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(493, 414)
+scale = Vector2(1, 11.8)
+
+[node name="BasicWall10" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(153, 393)
+scale = Vector2(1, 11.8)
+
+[node name="BasicWall12" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(81, 283)
+scale = Vector2(7.65217, 0.845715)
+
+[node name="BasicWall14" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(565, 303)
+scale = Vector2(7.65217, 0.845715)
+
+[node name="BasicWall16" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(87, 189)
+scale = Vector2(7.65217, 0.845715)
+
+[node name="BasicWall17" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(566, 192)
+scale = Vector2(7.65217, 0.845715)
+
+[node name="BasicWall2" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(325, 12)
+scale = Vector2(32.92, 2.04)
+
+[node name="BasicWall3" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(320, 470)
+scale = Vector2(32.92, 2.04)
+
+[node name="BasicWall4" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(-10, 252)
+scale = Vector2(1.96, 26.8)
+
+[node name="BasicWall5" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(654, 252)
+scale = Vector2(1.96, 26.8)
+
+[node name="BasicWall6" parent="Walls" instance=ExtResource("6_tm8n2")]
+position = Vector2(327, 242)
+scale = Vector2(9.32, 14.04)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-74, 38)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 203.0
+offset_right = 268.0
+offset_bottom = 255.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Don't get too close to guards"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 44.0
+offset_top = -141.0
+offset_right = 266.0
+offset_bottom = -89.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Don't get too close to guards"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
