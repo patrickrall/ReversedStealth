@@ -136,4 +136,4 @@ scale = Vector2(1.96, 26.8)
 position = Vector2(-86, -93)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.666667)

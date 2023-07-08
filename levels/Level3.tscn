@@ -147,4 +147,4 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Don't get too close to guards"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.745098)
