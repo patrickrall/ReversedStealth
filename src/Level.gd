@@ -8,7 +8,7 @@ func _ready():
 
 func spawn_player():
 	player = load("res://subscenes/Player.tscn").instantiate()
-	if $PlayerSpawn:
+	if has_node("PlayerSpawn"):
 		player.position = $PlayerSpawn.position
 	add_child(player)
 
