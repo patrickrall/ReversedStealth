@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
-[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="4_5yfvo"]
-[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="5_kehxi"]
+[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="4_5yfvo"]
+[ext_resource type="Texture2D" uid="uid://dgquj6ytlbmx5" path="res://assets/water_background.png" id="5_kehxi"]
 [ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_vthva"]
 [ext_resource type="PackedScene" uid="uid://ctmnrj4fb0fyj" path="res://subscenes/rocks/Rock7.tscn" id="6_ps2oj"]
 [ext_resource type="PackedScene" uid="uid://tvv2hyool4ip" path="res://subscenes/rocks/Rock4.tscn" id="7_pdyyb"]
@@ -17,7 +17,7 @@ size = Vector2(20, 484)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttqim"]
 size = Vector2(656, 20)
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_pgwok")
 
 [node name="WaterBackground" type="Sprite2D" parent="."]
@@ -103,7 +103,6 @@ position = Vector2(167, 342)
 [node name="Wall5" parent="Walls" instance=ExtResource("6_ps2oj")]
 position = Vector2(274, 148)
 rotation = -0.780891
-scale = Vector2(1, 1)
 
 [node name="Wall10" parent="Walls" instance=ExtResource("6_ps2oj")]
 position = Vector2(534, 373)
@@ -147,8 +146,7 @@ shape = SubResource("RectangleShape2D_ttqim")
 position = Vector2(110, 64)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0, 0, 0, 1)
+color = Color(0, 0.752941, 0.729412, 0.392157)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 152.0
