@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6joyr1v743t4"
-path="res://.godot/imported/cat_chark_asset.png-8bb0b7d90e552f5f7243561b62ab6f4d.ctex"
+uid="uid://um1n2a116n4m"
+path="res://.godot/imported/rock7.png-8d8e0c81c45b8e83f3910a0e0758bed4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat_chark_asset.png"
-dest_files=["res://.godot/imported/cat_chark_asset.png-8bb0b7d90e552f5f7243561b62ab6f4d.ctex"]
+source_file="res://assets/rocks/rock7.png"
+dest_files=["res://.godot/imported/rock7.png-8d8e0c81c45b8e83f3910a0e0758bed4.ctex"]
 
 [params]
 
