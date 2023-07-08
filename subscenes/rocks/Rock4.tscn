@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://tvv2hyool4ip"]
+
+[ext_resource type="Texture2D" uid="uid://gphxcdeohwbq" path="res://assets/rocks/rock4.png" id="2_l8gt8"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4c2ga"]
+polygon = PackedVector2Array(-0.178548, -1970.66, -0.321386, -1373.49, -0.37495, -955.469, -0.37495, -597.168, -0.232112, 537.451, -0.232112, 955.469, -0.303531, 1433.2, -0.303531, 1851.22, -0.142838, 2328.96, 0.0178548, 2328.96, 0.303531, 1970.66, 0.37495, 1433.2, 0.37495, 716.602, 0.321386, 477.735, 0.321386, 298.584, 0.357096, 59.7168, 0.357096, -358.301, 0.303531, -776.319, 0.303531, -1672.07, 0.196403, -1970.66, 0.124983, -1970.66, 0.0714191, -1791.5, -0.0714191, -2030.37)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("2_l8gt8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(-56.0074, -0.0167457)
+occluder = SubResource("OccluderPolygon2D_4c2ga")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(4, 34, 10, 33, 18, 23, 21, 16, 21, 10, 13, -9, 13, -16, 17, -24, 17, -31, 8, -39, -1, -39, -17, -33, -21, -24, -21, -12, -18, -8, -18, -5, -20, -1, -20, 6, -17, 13, -17, 28, -11, 33, -7, 33, -4, 30)

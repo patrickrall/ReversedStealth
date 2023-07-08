@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcpivs3kcctln"]
+
+[ext_resource type="Texture2D" uid="uid://bukngtfnrc1w" path="res://assets/rocks/rock5.png" id="2_j28w5"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ss0aq"]
+polygon = PackedVector2Array(-0.964158, 1612.35, -0.607063, 1612.35, -0.178548, 1433.2, 0.160693, 1373.49, 0.660627, 1074.9, 0.928449, 1074.9, 1.107, 597.168, 1.16056, -537.451, 1.08914, -1373.49, 0.999868, -1612.35, 0.85703, -1612.35, 0.696337, -1492.92, 0.517789, -1492.92, 0.392805, -1672.07, -0.660627, -1672.07, -1.01772, -1254.05, -1.19627, -358.301, -1.19627, 0, -1.107, 477.735, -1.107, 1254.05)
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_j28w5")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(-56.0074, -0.0167457)
+occluder = SubResource("OccluderPolygon2D_ss0aq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -23, 11, -24, 34, -27, 54, -27, 62, -21, 62, -8, 67, 0, 67, 6, 57, 21, 37, 28, -22, 28, -29, 25, -39, 25, -48, 27, -56, 27, -61, 23, -65, 9, -62, -10, -52, -18, -37, -18)

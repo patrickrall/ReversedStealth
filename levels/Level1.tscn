@@ -1,20 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bflxr2swrv3xt"]
+[gd_scene load_steps=13 format=3 uid="uid://bflxr2swrv3xt"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
-[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="2_gp7r1"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
-[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="4_5yfvo"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="4_5yfvo"]
+[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="5_kehxi"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_vthva"]
+[ext_resource type="PackedScene" uid="uid://ctmnrj4fb0fyj" path="res://subscenes/rocks/Rock7.tscn" id="6_ps2oj"]
+[ext_resource type="PackedScene" uid="uid://tvv2hyool4ip" path="res://subscenes/rocks/Rock4.tscn" id="7_pdyyb"]
+[ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="8_0ffhj"]
+[ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="9_ioi67"]
+[ext_resource type="PackedScene" uid="uid://bnyucib0lfoht" path="res://subscenes/rocks/Rock3.tscn" id="10_22qh3"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_60v5h"]
-size = Vector2(640, 480)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lndds"]
+size = Vector2(20, 484)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttqim"]
+size = Vector2(656, 20)
 
 [node name="Level" type="Node2D"]
-position = Vector2(172, 198)
 script = ExtResource("1_pgwok")
 
-[node name="Floor" type="MeshInstance2D" parent="."]
-position = Vector2(148, 42)
-mesh = SubResource("QuadMesh_60v5h")
+[node name="WaterBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("5_kehxi")
 
 [node name="Lights" type="Node" parent="."]
 
@@ -35,7 +43,7 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_5yfvo")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lights"]
-position = Vector2(279, 390)
+position = Vector2(108, 426)
 rotation = 3.13902
 scale = Vector2(0.411414, 0.37131)
 shadow_enabled = true
@@ -75,93 +83,79 @@ shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_5yfvo")
 
 [node name="Goal" parent="." instance=ExtResource("3_frnse")]
-position = Vector2(366, -112)
+position = Vector2(95, 414)
 next_scene = "res://levels/Level2.tscn"
 
 [node name="Walls" type="Node" parent="."]
 
-[node name="BasicWall6" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(313, 287)
-scale = Vector2(1, 18.2)
-opaque = false
+[node name="Wall" parent="Walls" instance=ExtResource("5_vthva")]
+position = Vector2(67, 181)
 
-[node name="BasicWall7" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(447, 138)
-scale = Vector2(1, 11.8)
+[node name="Wall2" parent="Walls" instance=ExtResource("6_ps2oj")]
+position = Vector2(176, 178)
 
-[node name="BasicWall10" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(167, 138)
-scale = Vector2(1, 11.8)
-opaque = false
+[node name="Wall3" parent="Walls" instance=ExtResource("7_pdyyb")]
+position = Vector2(246, 38)
 
-[node name="BasicWall11" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(106, 303)
-scale = Vector2(1, 4.56)
-opaque = false
+[node name="Wall4" parent="Walls" instance=ExtResource("8_0ffhj")]
+position = Vector2(167, 342)
 
-[node name="BasicWall12" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(170, 398)
-scale = Vector2(1, 8)
-opaque = false
+[node name="Wall5" parent="Walls" instance=ExtResource("6_ps2oj")]
+position = Vector2(274, 148)
+rotation = -0.780891
+scale = Vector2(1, 1)
 
-[node name="BasicWall13" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(235, 297)
-scale = Vector2(1, 4.56)
-opaque = false
+[node name="Wall10" parent="Walls" instance=ExtResource("6_ps2oj")]
+position = Vector2(534, 373)
+rotation = -1.18458
 
-[node name="BasicWall15" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(396, 305)
-scale = Vector2(1, 4.56)
+[node name="Wall6" parent="Walls" instance=ExtResource("5_vthva")]
+position = Vector2(382, 222)
 
-[node name="BasicWall16" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(466, 419)
-scale = Vector2(1, 4.56)
+[node name="Wall7" parent="Walls" instance=ExtResource("9_ioi67")]
+position = Vector2(534, 199)
 
-[node name="BasicWall17" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(543, 309)
-scale = Vector2(1, 4.56)
+[node name="Wall8" parent="Walls" instance=ExtResource("5_vthva")]
+position = Vector2(471, 104)
 
-[node name="BasicWall8" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(467, 262)
-scale = Vector2(7.65217, 0.845715)
+[node name="Wall9" parent="Walls" instance=ExtResource("10_22qh3")]
+position = Vector2(425, 374)
 
-[node name="BasicWall9" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(167, 249)
-scale = Vector2(7.65217, 0.845715)
-opaque = false
+[node name="Wall11" parent="Walls" instance=ExtResource("10_22qh3")]
+position = Vector2(482, 285)
 
-[node name="BasicWall14" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(342, 217)
-scale = Vector2(3.05217, 0.845715)
-opaque = false
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(854, 685)
 
-[node name="BasicWall2" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(325, 12)
-scale = Vector2(32.92, 2.04)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-210, -444)
+shape = SubResource("RectangleShape2D_lndds")
 
-[node name="BasicWall3" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(320, 470)
-scale = Vector2(32.92, 2.04)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-854, -444)
+shape = SubResource("RectangleShape2D_lndds")
 
-[node name="BasicWall4" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(-10, 252)
-scale = Vector2(1.96, 26.8)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-532, -687)
+shape = SubResource("RectangleShape2D_ttqim")
 
-[node name="BasicWall5" parent="Walls" instance=ExtResource("2_gp7r1")]
-position = Vector2(654, 252)
-scale = Vector2(1.96, 26.8)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-523, -207)
+shape = SubResource("RectangleShape2D_ttqim")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-85, -94)
+position = Vector2(110, 64)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 138.0
-offset_top = -155.0
-offset_right = 248.0
-offset_bottom = -103.0
+offset_left = 152.0
+offset_top = 317.0
+offset_right = 262.0
+offset_bottom = 369.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "If you are lost,
  press \"home\""
+metadata/_edit_use_anchors_ = true
