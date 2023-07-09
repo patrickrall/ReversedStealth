@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmdxpc1vy8tp0"]
+[gd_scene load_steps=16 format=3 uid="uid://dmdxpc1vy8tp0"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_ddhn4"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_huk73"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_tmhyl"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_h5s1p"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_n2iwp"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="6_rngw4"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="7_8qslj"]
+[ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="8_5qpug"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="9_2d2gy"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="10_r8m3b"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="11_2ofc8"]
+[ext_resource type="PackedScene" uid="uid://deroh5x6v85wy" path="res://subscenes/seacreatures/Anemone.tscn" id="12_m34bd"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="13_tch8w"]
+[ext_resource type="PackedScene" uid="uid://dm2xofye3fe2c" path="res://subscenes/seacreatures/CatShark.tscn" id="14_qwy0f"]
+
+[sub_resource type="Curve2D" id="Curve2D_axh6s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 468, 50, 0, 0, 0, 0, 424, 121, 0, 0, 0, 0, 412, 207, 0, 0, 0, 0, 418, 319, 0, 0, 0, 0, 441, 426, 0, 0, 0, 0, 507, 439, 0, 0, 0, 0, 564, 372, 0, 0, 0, 0, 578, 256, 0, 0, 0, 0, 572, 122, 0, 0, 0, 0, 529, 59, 0, 0, 0, 0, 468, 50, 0, 0, 0, 0, 699, 83)
+}
+point_count = 12
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ddhn4")
@@ -60,3 +76,98 @@ scale = Vector2(1, 28.36)
 [node name="EastWall" parent="Walls" instance=ExtResource("4_h5s1p")]
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
+
+[node name="Wall2" parent="." instance=ExtResource("5_n2iwp")]
+position = Vector2(271, 320)
+rotation = 1.46017
+
+[node name="Coral" parent="." instance=ExtResource("6_rngw4")]
+position = Vector2(46, 269)
+
+[node name="Coral2" parent="." instance=ExtResource("6_rngw4")]
+position = Vector2(155, 210)
+
+[node name="Coral3" parent="." instance=ExtResource("6_rngw4")]
+position = Vector2(250, 251)
+
+[node name="Coral4" parent="." instance=ExtResource("7_8qslj")]
+position = Vector2(146, 268)
+
+[node name="Wall" parent="." instance=ExtResource("5_n2iwp")]
+position = Vector2(284, 462)
+
+[node name="Clam" parent="." instance=ExtResource("8_5qpug")]
+position = Vector2(286, 420)
+
+[node name="Algae1" parent="." instance=ExtResource("9_2d2gy")]
+position = Vector2(77, 323.571)
+
+[node name="Algae2" parent="." instance=ExtResource("9_2d2gy")]
+position = Vector2(193, 322.571)
+
+[node name="Algae3" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(196, 367.571)
+
+[node name="Algae4" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(41, 352)
+
+[node name="Algae5" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(122, 440.571)
+
+[node name="Algae6" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(205, 273.571)
+
+[node name="Algae7" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(42, 367.571)
+
+[node name="Algae8" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(18, 389.571)
+
+[node name="Algae9" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(248, 345.571)
+
+[node name="Algae10" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(215, 203.571)
+
+[node name="Algae11" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(56, 174.571)
+
+[node name="Algae12" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(149, 74.5714)
+
+[node name="Algae13" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(84, 55.5714)
+
+[node name="Algae14" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(187, 44.5714)
+
+[node name="Algae15" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(24, 79.5714)
+
+[node name="Algae16" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(220, 29.5714)
+
+[node name="Algae17" parent="." instance=ExtResource("9_2d2gy")]
+position = Vector2(128, 119.571)
+
+[node name="Anemone" parent="." instance=ExtResource("12_m34bd")]
+position = Vector2(298, 291)
+rotation = 1.26363
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedPath" type="Path2D" parent="."]
+position = Vector2(1, 1)
+curve = SubResource("Curve2D_axh6s")
+script = ExtResource("13_tch8w")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath"]
+position = Vector2(468, 50)
+rotation = 2.12559
+
+[node name="CatShark" parent="AnimatedPath/PathFollow2D" instance=ExtResource("14_qwy0f")]
+
+[node name="Algae18" parent="." instance=ExtResource("10_r8m3b")]
+position = Vector2(515, 237.571)

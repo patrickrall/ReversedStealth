@@ -1,10 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr5kdwfuqu7bk"]
+[gd_scene load_steps=19 format=3 uid="uid://dr5kdwfuqu7bk"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_jedu3"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_s8uem"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_g451x"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_4pw3b"]
-[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="5_8xq5x"]
+[ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="5_rt2tg"]
+[ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="6_u2hcy"]
+[ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="7_kecss"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="8_7lumt"]
+[ext_resource type="PackedScene" uid="uid://tvv2hyool4ip" path="res://subscenes/rocks/Rock4.tscn" id="9_4f4df"]
+[ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="10_1p3p7"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="11_v8hwn"]
+[ext_resource type="PackedScene" uid="uid://bt7bv5mqw0soa" path="res://subscenes/coral/Coral1.tscn" id="12_ar6h4"]
+[ext_resource type="PackedScene" uid="uid://5ov3wqwmrf84" path="res://subscenes/rocks/Rock2.tscn" id="13_bns51"]
+[ext_resource type="PackedScene" uid="uid://bnyucib0lfoht" path="res://subscenes/rocks/Rock3.tscn" id="14_2do31"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="15_qnw0b"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="16_6x33l"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="17_uhs2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3l2e"]
+size = Vector2(102.527, 84.7332)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jedu3")
@@ -16,7 +31,7 @@ texture = ExtResource("2_s8uem")
 [node name="Goals" type="Node" parent="."]
 
 [node name="EastGoal" parent="Goals" instance=ExtResource("3_g451x")]
-position = Vector2(577, 211)
+position = Vector2(547, 59)
 next_scene = "res://levels/NewLevel2.tscn"
 next_spawn = "NorthwestSpawn"
 
@@ -51,61 +66,101 @@ scale = Vector2(1, 28.36)
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
-position = Vector2(85, 104)
-rotation = 3.13902
-scale = Vector2(0.291311, 0.291311)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
-position = Vector2(137, 275)
-rotation = 3.13902
-scale = Vector2(0.411414, 0.37131)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
-position = Vector2(108, 426)
-rotation = 3.13902
-scale = Vector2(0.411414, 0.37131)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
-position = Vector2(356, 113)
-rotation = 3.13902
-scale = Vector2(0.411414, 0.37131)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
-position = Vector2(443, 325)
-rotation = 3.13902
-scale = Vector2(0.411414, 0.37131)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
-position = Vector2(601, 248)
-rotation = 3.13902
-scale = Vector2(0.411414, 0.37131)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
-position = Vector2(554, 105)
-rotation = 3.13902
-scale = Vector2(0.291311, 0.291311)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("5_8xq5x")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.164706, 0.164706, 0.164706, 1)
+color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[node name="Pearl" parent="." instance=ExtResource("5_rt2tg")]
+position = Vector2(504, 428)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
+position = Vector2(2.595, 1.09497)
+rotation = 3.14159
+scale = Vector2(0.281, -0.281)
+shape = SubResource("RectangleShape2D_j3l2e")
+
+[node name="Clam" parent="." instance=ExtResource("6_u2hcy")]
+position = Vector2(469, 161)
+scale = Vector2(-0.281, 0.281)
+
+[node name="Wall" parent="." instance=ExtResource("7_kecss")]
+position = Vector2(160, 142)
+rotation = 1.56664
+
+[node name="Wall2" parent="." instance=ExtResource("8_7lumt")]
+position = Vector2(470, 62)
+rotation = 1.61738
+
+[node name="Wall3" parent="." instance=ExtResource("9_4f4df")]
+position = Vector2(469, 215)
+rotation = -1.48196
+
+[node name="Wall4" parent="." instance=ExtResource("10_1p3p7")]
+position = Vector2(544, 309)
+rotation = 0.599437
+
+[node name="Coral" parent="." instance=ExtResource("11_v8hwn")]
+position = Vector2(478, 284)
+rotation = -0.743071
+
+[node name="Coral2" parent="." instance=ExtResource("11_v8hwn")]
+position = Vector2(556, 340)
+rotation = 0.246631
+
+[node name="Coral3" parent="." instance=ExtResource("12_ar6h4")]
+position = Vector2(222, 455)
+
+[node name="Coral4" parent="." instance=ExtResource("12_ar6h4")]
+position = Vector2(375, 480)
+rotation = -0.605056
+
+[node name="Wall5" parent="." instance=ExtResource("13_bns51")]
+position = Vector2(296, 338)
+
+[node name="Wall6" parent="." instance=ExtResource("14_2do31")]
+position = Vector2(313, 162)
+rotation = 1.14049
+
+[node name="Algae1" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(371, 448.571)
+
+[node name="Algae2" parent="." instance=ExtResource("16_6x33l")]
+position = Vector2(262, 421.571)
+
+[node name="Algae3" parent="." instance=ExtResource("17_uhs2g")]
+position = Vector2(131, 281.571)
+
+[node name="Algae4" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(527, 358.571)
+
+[node name="Algae5" parent="." instance=ExtResource("16_6x33l")]
+position = Vector2(294, 170.571)
+
+[node name="Algae6" parent="." instance=ExtResource("16_6x33l")]
+position = Vector2(277, 169.571)
+
+[node name="Algae7" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(508, 50.5714)
+
+[node name="Algae8" parent="." instance=ExtResource("16_6x33l")]
+position = Vector2(567, 31.5714)
+
+[node name="Algae9" parent="." instance=ExtResource("17_uhs2g")]
+position = Vector2(618, 50.5714)
+
+[node name="Algae10" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(616, 107.571)
+
+[node name="Algae11" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(206, 91.5714)
+
+[node name="Algae12" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(199, 233.571)
+
+[node name="Algae13" parent="." instance=ExtResource("16_6x33l")]
+position = Vector2(416, 106.571)
+
+[node name="Algae14" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(413, 211.571)
+
+[node name="Algae15" parent="." instance=ExtResource("15_qnw0b")]
+position = Vector2(439, 103.571)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cq0aff14ina0o"]
+[gd_scene load_steps=18 format=3 uid="uid://cq0aff14ina0o"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_fo47e"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_uvqyp"]
@@ -6,14 +6,34 @@
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_4atnk"]
 [ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_cogrf"]
 [ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="6_e6emv"]
-[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="6_j48ov"]
 [ext_resource type="PackedScene" uid="uid://xind1qbfcfsv" path="res://subscenes/seacreatures/Seaslug.tscn" id="8_dkjgq"]
 [ext_resource type="PackedScene" uid="uid://b0fvquqdtscta" path="res://subscenes/seacreatures/Jellyfish.tscn" id="9_g137w"]
 [ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="10_hd0hx"]
-[ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="11_3xurt"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="11_wjjnx"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="12_ak744"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="13_c5txw"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="13_q7vl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mboir"]
 size = Vector2(102, 58)
+
+[sub_resource type="Curve2D" id="Curve2D_j8v1f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 440, 330, 0, 0, 0, 0, 578, 172, 0, 0, 0, 0, 440, 58, 0, 0, 0, 0, 567, 49, 0, 0, 0, 0, 461, 190, 0, 0, 0, 0, 571, 345, 0, 0, 0, 0, 440, 330)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_hodab"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 37, 383, 0, 0, 0, 0, 155, 316, 0, 0, 0, 0, 244, 261, 0, 0, 0, 0, 162, 366, 0, 0, 0, 0, 38, 383)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_k1aqu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 281.815, 190, 0, 0, 0, 0, 230.815, 198, 0, 0, 0, 0, 175.815, 205, 0, 0, 0, 0, 143.815, 199, 0, 0, 0, 0, 98.815, 201, 0, 0, 0, 0, 158.815, 205, 0, 0, 0, 0, 215.815, 204, 0, 0, 0, 0, 334.815, 193, 0, 0, 0, 0, 326.815, 271, 0, 0, 0, 0, 324.815, 195, 0, 0, 0, 0, 281.815, 190)
+}
+point_count = 11
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fo47e")
@@ -92,50 +112,11 @@ rotation = 1.44674
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
-position = Vector2(207, 128)
-rotation = 3.13902
-scale = Vector2(0.291311, 0.291311)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("6_j48ov")
-
-[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
-position = Vector2(43, 39)
-rotation = 3.13902
-scale = Vector2(0.291311, 0.291311)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("6_j48ov")
-
-[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
-position = Vector2(42, 249)
-rotation = 3.13902
-scale = Vector2(0.291311, 0.291311)
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("6_j48ov")
-
-[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
-position = Vector2(500, 427)
-rotation = 3.13902
-scale = Vector2(0.15, 0.15)
-energy = 0.41
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("6_j48ov")
-
 [node name="Coral" parent="." instance=ExtResource("6_e6emv")]
 position = Vector2(208, 127)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
-
-[node name="SeaSlug" parent="." instance=ExtResource("8_dkjgq")]
-position = Vector2(485, 8)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("9_g137w")]
-position = Vector2(567, 251)
 
 [node name="Pearl" parent="." instance=ExtResource("10_hd0hx")]
 position = Vector2(499, 439)
@@ -153,5 +134,61 @@ unique_key = "level3pearl2"
 position = Vector2(-1, -11.5714)
 shape = SubResource("RectangleShape2D_mboir")
 
-[node name="ViperFish" parent="." instance=ExtResource("11_3xurt")]
-position = Vector2(264, 326)
+[node name="Algae1" parent="." instance=ExtResource("11_wjjnx")]
+position = Vector2(90, 106.571)
+
+[node name="Algae2" parent="." instance=ExtResource("12_ak744")]
+position = Vector2(169, 77.5714)
+
+[node name="Algae3" parent="." instance=ExtResource("12_ak744")]
+position = Vector2(38, 74.5714)
+
+[node name="Algae4" parent="." instance=ExtResource("11_wjjnx")]
+position = Vector2(143, 26.5714)
+
+[node name="Algae5" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(298, 80.5714)
+
+[node name="Algae6" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(309, 28.5714)
+
+[node name="AnimatedPath" type="Path2D" parent="."]
+position = Vector2(1, 1)
+curve = SubResource("Curve2D_j8v1f")
+script = ExtResource("13_c5txw")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath"]
+position = Vector2(440, 330)
+rotation = -0.852863
+rotates = false
+
+[node name="Jellyfishj" parent="AnimatedPath/PathFollow2D" instance=ExtResource("9_g137w")]
+rotation = 1.07687
+
+[node name="AnimatedPath3" type="Path2D" parent="."]
+position = Vector2(1, 1)
+curve = SubResource("Curve2D_hodab")
+script = ExtResource("13_c5txw")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath3"]
+position = Vector2(37, 383)
+rotation = -0.852863
+rotates = false
+
+[node name="Jellyfishj" parent="AnimatedPath3/PathFollow2D" instance=ExtResource("9_g137w")]
+rotation = 1.07687
+
+[node name="AnimatedPath2" type="Path2D" parent="."]
+position = Vector2(1.185, 1)
+curve = SubResource("Curve2D_k1aqu")
+script = ExtResource("13_c5txw")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath2"]
+position = Vector2(281.815, 190)
+rotation = 2.986
+
+[node name="SeaSlug" parent="AnimatedPath2/PathFollow2D" instance=ExtResource("8_dkjgq")]
+scale = Vector2(0.065, -0.065)
