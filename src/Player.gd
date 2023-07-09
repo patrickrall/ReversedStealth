@@ -8,6 +8,12 @@ var has_pearl = false :
 	set(value):
 		has_pearl = value
 		$Pearl.visible = has_pearl
+		Globals.data["player_has_pearl"] = has_pearl
+
+func _ready():
+	if Globals.data.has("player_has_pearl"):
+		has_pearl = Globals.data["player_has_pearl"]
+	$Pearl.visible = has_pearl
 
 var last_spawn = "PlayerSpawn":
 	set(value):

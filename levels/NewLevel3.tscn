@@ -139,6 +139,7 @@ position = Vector2(567, 251)
 
 [node name="Pearl" parent="." instance=ExtResource("10_hd0hx")]
 position = Vector2(499, 439)
+unique_key = "level3pearl1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
 position = Vector2(-1, -11.5714)
@@ -146,6 +147,7 @@ shape = SubResource("RectangleShape2D_mboir")
 
 [node name="Pearl2" parent="." instance=ExtResource("10_hd0hx")]
 position = Vector2(294.108, 445.108)
+unique_key = "level3pearl2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl2"]
 position = Vector2(-1, -11.5714)
