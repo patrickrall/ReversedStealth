@@ -181,3 +181,15 @@ position = Vector2(532, 315)
 
 [node name="Algae21" parent="." instance=ExtResource("11_2ofc8")]
 position = Vector2(507, 155)
+
+[node name="Algae22" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(28, 391.571)
+
+[node name="Algae23" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(105, 454.571)
+
+[node name="Algae24" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(26, 457.571)
+
+[node name="Algae25" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(61, 405.571)

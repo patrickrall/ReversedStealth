@@ -192,3 +192,27 @@ rotation = 2.986
 
 [node name="SeaSlug" parent="AnimatedPath2/PathFollow2D" instance=ExtResource("8_dkjgq")]
 scale = Vector2(0.065, -0.065)
+
+[node name="Algae7" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(56, 215.571)
+
+[node name="Algae8" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(28, 214.571)
+
+[node name="Algae9" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(75, 226.571)
+
+[node name="Algae10" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(16, 231.571)
+
+[node name="Algae11" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(83, 202.571)
+
+[node name="Algae12" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(17, 31.5714)
+
+[node name="Algae13" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(82, 14.5714)
+
+[node name="Algae14" parent="." instance=ExtResource("13_q7vl0")]
+position = Vector2(29, 63.5714)
