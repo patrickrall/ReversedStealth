@@ -1,12 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7wyl3xyjm8rt"]
+[gd_scene load_steps=13 format=3 uid="uid://c7wyl3xyjm8rt"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_1w8li"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_6l5fm"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_to2fv"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_a1x3f"]
+[ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="4_mw1v5"]
 [ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="5_n20fv"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="6_7bc33"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="9_uoe8b"]
+[ext_resource type="PackedScene" uid="uid://q78hteyoe6hg" path="res://subscenes/seacreatures/AnglerFish.tscn" id="11_3fymq"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="11_r30hn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5i46t"]
+
+[sub_resource type="Curve2D" id="Curve2D_klblu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 285, 151, 0, 0, 0, 0, 283.964, 64.7399, 0, 0, 0, 0, 286, 23, 0, 0, 0, 0, 286, 149)
+}
+point_count = 4
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1w8li")
@@ -33,13 +44,25 @@ scale = Vector2(1, 28.36)
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
 
+[node name="Wall" parent="Walls" instance=ExtResource("4_mw1v5")]
+position = Vector2(488, 190)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("4_mw1v5")]
+position = Vector2(488, 263)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("4_mw1v5")]
+position = Vector2(254, 195)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("4_mw1v5")]
+position = Vector2(261, 267)
+
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NortheastSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(577, 102)
 
 [node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(58, 82)
+position = Vector2(560, 102)
 
 [node name="Goals" type="Node" parent="."]
 
@@ -49,9 +72,116 @@ next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "SouthSpawn"
 
 [node name="Pearl" parent="." instance=ExtResource("5_n20fv")]
-position = Vector2(363, 332)
+position = Vector2(563, 418)
 unique_key = "level8pearl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
 rotation = -0.00132998
 shape = SubResource("RectangleShape2D_5i46t")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(567, 419)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+energy = 0.71
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("9_uoe8b")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(584, 52)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+energy = 0.71
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("9_uoe8b")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(12, 40)
+curve = SubResource("Curve2D_klblu")
+script = ExtResource("11_r30hn")
+speed = 10.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(284.519, 110.898)
+rotation = -1.5708
+progress = 40.1072
+rotates = false
+
+[node name="Anglerfish" parent="Path2D/PathFollow2D" instance=ExtResource("11_3fymq")]
+position = Vector2(58, -19)
+rotation = -1.5708
+scale = Vector2(0.286, -0.274)
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(-91, 357)
+curve = SubResource("Curve2D_klblu")
+script = ExtResource("11_r30hn")
+speed = 10.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(286, 40.8262)
+rotation = -1.5708
+scale = Vector2(1, -0.919999)
+progress = 145.93
+rotates = false
+
+[node name="Anglerfish" parent="Path2D2/PathFollow2D" instance=ExtResource("11_3fymq")]
+position = Vector2(58, -19)
+rotation = -1.5708
+scale = Vector2(0.286, -0.274)
+
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(-5, 355)
+curve = SubResource("Curve2D_klblu")
+script = ExtResource("11_r30hn")
+speed = 10.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(286, 81.1406)
+rotation = -1.5708
+scale = Vector2(1, -0.919999)
+progress = 186.198
+rotates = false
+
+[node name="Anglerfish" parent="Path2D3/PathFollow2D" instance=ExtResource("11_3fymq")]
+position = Vector2(58, -19)
+rotation = -1.5708
+scale = Vector2(0.286, -0.274)
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(95, 359)
+curve = SubResource("Curve2D_klblu")
+script = ExtResource("11_r30hn")
+speed = 10.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(286, 121.771)
+rotation = -1.5708
+scale = Vector2(1, -0.919999)
+progress = 226.973
+rotates = false
+
+[node name="Anglerfish" parent="Path2D4/PathFollow2D" instance=ExtResource("11_3fymq")]
+position = Vector2(58, -19)
+rotation = -1.5708
+scale = Vector2(0.286, -0.274)
+
+[node name="Algae3" parent="." instance=ExtResource("6_7bc33")]
+position = Vector2(56.9998, 428)
+scale = Vector2(0.00186087, 0.00186087)
+
+[node name="Algae1" parent="." instance=ExtResource("6_7bc33")]
+position = Vector2(219, 68)
+
+[node name="Algae4" parent="." instance=ExtResource("6_7bc33")]
+position = Vector2(44, 134)
+
+[node name="Algae5" parent="." instance=ExtResource("6_7bc33")]
+position = Vector2(36, 305)
