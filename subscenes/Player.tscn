@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_1hwe8"]
 [ext_resource type="Texture2D" uid="uid://bw2ftcv1b1dtp" path="res://assets/player_72ppi.png" id="2_ekkt1"]
-[ext_resource type="Texture2D" uid="uid://k7fpc1xv4ypm" path="res://assets/pearl.png" id="3_pf0d4"]
+[ext_resource type="Texture2D" uid="uid://crtqrplov8db0" path="res://assets/pearl.png" id="3_pf0d4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ofdqv"]
 polygon = PackedVector2Array(-10, 16, 6, 19, 25, 18, 35, 11, 34, 3, 13, 1, 2, -18, 5, 1, -32, 4, -35, 12, -32, 18)
