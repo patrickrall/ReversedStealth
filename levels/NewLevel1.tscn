@@ -15,15 +15,19 @@ texture = ExtResource("2_s8uem")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(58, 82)
 
-[node name="NorthwestSpawn" type="Marker2D" parent="."]
-position = Vector2(58, 82)
+[node name="Goals" type="Node" parent="."]
 
-[node name="EastGoal" parent="." instance=ExtResource("3_g451x")]
+[node name="EastGoal" parent="Goals" instance=ExtResource("3_g451x")]
 position = Vector2(577, 211)
 next_scene = "res://levels/NewLevel2.tscn"
 next_spawn = "NorthwestSpawn"
 
-[node name="EastSpawn" type="Marker2D" parent="."]
+[node name="Spawns" type="Node" parent="."]
+
+[node name="NorthwestSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(58, 82)
+
+[node name="EastSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(526, 229)
 
 [node name="Walls" type="Node" parent="."]

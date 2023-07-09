@@ -10,5 +10,5 @@ func change_scene(new_scene, spawn_location):
 	# wait a little bit before setting the player location
 	await get_tree().create_timer(0.01).timeout
 	var level_node = get_tree().get_root().get_node("Level")
-	var spawn_node = level_node.get_node(spawn_location)
+	var spawn_node = level_node.get_node("Spawns").get_node(spawn_location)
 	get_tree().get_first_node_in_group("Player").position = spawn_node.position

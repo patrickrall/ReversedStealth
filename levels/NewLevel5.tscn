@@ -15,46 +15,6 @@ texture = ExtResource("2_vmvjs")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(58, 82)
 
-[node name="NortheastGoal" parent="." instance=ExtResource("3_qbioy")]
-position = Vector2(564, 21)
-next_scene = "res://levels/NewLevel4.tscn"
-next_spawn = "SouthSpawn"
-
-[node name="NortheastSpawn" type="Marker2D" parent="."]
-position = Vector2(584, 79)
-
-[node name="EastGoal" parent="." instance=ExtResource("3_qbioy")]
-position = Vector2(576, 211)
-next_scene = "res://levels/NewLevel6.tscn"
-next_spawn = "WestSpawn"
-
-[node name="EastSpawn" type="Marker2D" parent="."]
-position = Vector2(544, 231)
-
-[node name="SoutheastGoal" parent="." instance=ExtResource("3_qbioy")]
-position = Vector2(572, 418)
-next_scene = "res://levels/NewLevel7.tscn"
-next_spawn = "NorthwestSpawn"
-
-[node name="SoutheastSpawn" type="Marker2D" parent="."]
-position = Vector2(534, 436)
-
-[node name="SouthGoal" parent="." instance=ExtResource("3_qbioy")]
-position = Vector2(218, 405)
-next_scene = "res://levels/NewLevel8.tscn"
-next_spawn = "NortheastSpawn"
-
-[node name="SouthSpawn" type="Marker2D" parent="."]
-position = Vector2(235, 375)
-
-[node name="WestGoal" parent="." instance=ExtResource("3_qbioy")]
-position = Vector2(27, 202)
-next_scene = "res://levels/NewLevel9.tscn"
-next_spawn = "SoutheastSpawn"
-
-[node name="WestSpawn" type="Marker2D" parent="."]
-position = Vector2(106, 223)
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="NorthWall" parent="Walls" instance=ExtResource("4_5o5aj")]
@@ -72,3 +32,47 @@ scale = Vector2(1, 28.36)
 [node name="EastWall" parent="Walls" instance=ExtResource("4_5o5aj")]
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="NortheastSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(584, 79)
+
+[node name="EastSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(544, 231)
+
+[node name="SoutheastSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(534, 436)
+
+[node name="SouthSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(235, 375)
+
+[node name="WestSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(106, 223)
+
+[node name="Goals" type="Node" parent="."]
+
+[node name="NortheastGoal" parent="Goals" instance=ExtResource("3_qbioy")]
+position = Vector2(564, 21)
+next_scene = "res://levels/NewLevel4.tscn"
+next_spawn = "SouthSpawn"
+
+[node name="EastGoal" parent="Goals" instance=ExtResource("3_qbioy")]
+position = Vector2(576, 211)
+next_scene = "res://levels/NewLevel6.tscn"
+next_spawn = "WestSpawn"
+
+[node name="SoutheastGoal" parent="Goals" instance=ExtResource("3_qbioy")]
+position = Vector2(572, 418)
+next_scene = "res://levels/NewLevel7.tscn"
+next_spawn = "NorthwestSpawn"
+
+[node name="SouthGoal" parent="Goals" instance=ExtResource("3_qbioy")]
+position = Vector2(218, 405)
+next_scene = "res://levels/NewLevel8.tscn"
+next_spawn = "NortheastSpawn"
+
+[node name="WestGoal" parent="Goals" instance=ExtResource("3_qbioy")]
+position = Vector2(27, 202)
+next_scene = "res://levels/NewLevel9.tscn"
+next_spawn = "SoutheastSpawn"

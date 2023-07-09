@@ -15,30 +15,6 @@ texture = ExtResource("2_060up")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(58, 82)
 
-[node name="NorthGoal" parent="." instance=ExtResource("3_f047q")]
-position = Vector2(310, 25)
-next_scene = "res://levels/NewLevel2.tscn"
-next_spawn = "SouthwestSpawn"
-
-[node name="NorthSpawn" type="Marker2D" parent="."]
-position = Vector2(332, 85)
-
-[node name="EastGoal" parent="." instance=ExtResource("3_f047q")]
-position = Vector2(577, 208)
-next_scene = "res://levels/NewLevel3.tscn"
-next_spawn = "WestSpawn"
-
-[node name="EastSpawn" type="Marker2D" parent="."]
-position = Vector2(542, 222)
-
-[node name="SouthGoal" parent="." instance=ExtResource("3_f047q")]
-position = Vector2(294, 395)
-next_scene = "res://levels/NewLevel5.tscn"
-next_spawn = "NortheastSpawn"
-
-[node name="SouthSpawn" type="Marker2D" parent="."]
-position = Vector2(313, 364)
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="NorthWall" parent="Walls" instance=ExtResource("4_coaxg")]
@@ -56,3 +32,31 @@ scale = Vector2(1, 28.36)
 [node name="EastWall" parent="Walls" instance=ExtResource("4_coaxg")]
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
+
+[node name="Spawns" type="Node" parent="."]
+
+[node name="NorthSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(332, 85)
+
+[node name="EastSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(542, 222)
+
+[node name="SouthSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(313, 364)
+
+[node name="Goals" type="Node" parent="."]
+
+[node name="NorthGoal" parent="Goals" instance=ExtResource("3_f047q")]
+position = Vector2(310, 25)
+next_scene = "res://levels/NewLevel2.tscn"
+next_spawn = "SouthwestSpawn"
+
+[node name="EastGoal" parent="Goals" instance=ExtResource("3_f047q")]
+position = Vector2(577, 208)
+next_scene = "res://levels/NewLevel3.tscn"
+next_spawn = "WestSpawn"
+
+[node name="SouthGoal" parent="Goals" instance=ExtResource("3_f047q")]
+position = Vector2(294, 395)
+next_scene = "res://levels/NewLevel5.tscn"
+next_spawn = "NortheastSpawn"
