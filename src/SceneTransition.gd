@@ -2,7 +2,19 @@ extends CanvasLayer
 
 const ANIM_LEN = 0.5
 
+const SHALLOW = ["res://levels/Level0.tscn", "res://levels/NewLevel1.tscn", "res://levels/NewLevel10.tscn"]
+
 func change_scene(new_scene, spawn_location):
+	if new_scene in SHALLOW:
+		if $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.stop()
+		if not $AudioStreamPlayer2.playing:
+			$AudioStreamPlayer2.play()
+	else:
+		if $AudioStreamPlayer2.playing:
+			$AudioStreamPlayer2.stop()
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
 	# start player rotation and scaling tween
 	var player = get_tree().get_first_node_in_group("Player")
 	print(player.last_spawn)
