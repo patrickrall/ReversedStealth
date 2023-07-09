@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv5b50fvsgb87"]
+[gd_scene load_steps=10 format=3 uid="uid://dv5b50fvsgb87"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_6jec4"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_gghur"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_x6lpq"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_fvag7"]
 [ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="5_ynlxf"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="6_slpmq"]
+[ext_resource type="PackedScene" uid="uid://deroh5x6v85wy" path="res://subscenes/seacreatures/Anemone.tscn" id="7_dkwk5"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="8_5ssnh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nono5"]
 
@@ -39,7 +42,7 @@ scale = Vector2(1, 28.36)
 position = Vector2(59, 103)
 
 [node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(207, 32)
+position = Vector2(58, 109)
 
 [node name="Goals" type="Node" parent="."]
 
@@ -49,8 +52,106 @@ next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "SoutheastSpawn"
 
 [node name="Pearl" parent="." instance=ExtResource("5_ynlxf")]
-position = Vector2(363, 332)
+position = Vector2(546, 445)
 unique_key = "level7pearl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
 shape = SubResource("RectangleShape2D_nono5")
+
+[node name="Coral" parent="." instance=ExtResource("6_slpmq")]
+position = Vector2(171, 35)
+rotation = -3.0347
+
+[node name="Anemone" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(197, 209)
+
+[node name="Anemone22" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(142, 456)
+
+[node name="Anemone23" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(24, 321)
+
+[node name="Anemone24" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(32, 454)
+
+[node name="Anemone25" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(389, 459)
+
+[node name="Anemone26" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(259, 23)
+
+[node name="Anemone27" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(532, 24)
+
+[node name="Anemone5" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(309, 217)
+
+[node name="Anemone6" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(77, 364)
+
+[node name="Anemone7" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(179, 298)
+
+[node name="Anemone8" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(374, 122)
+
+[node name="Anemone9" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(463, 290)
+
+[node name="Anemone10" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(314, 427)
+
+[node name="Anemone11" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(371, 269)
+
+[node name="Anemone12" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(474, 76)
+
+[node name="Anemone13" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(595, 177)
+
+[node name="Anemone14" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(562, 261)
+
+[node name="Anemone15" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(283, 329)
+
+[node name="Anemone16" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(453, 395)
+
+[node name="Anemone17" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(84.0001, 172)
+
+[node name="Anemone18" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(67, 278)
+
+[node name="Anemone19" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(321, 60)
+
+[node name="Anemone20" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(574, 74)
+
+[node name="Anemone21" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(417, 192)
+
+[node name="Anemone2" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(492, 175)
+
+[node name="Anemone3" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(205, 390)
+
+[node name="Anemone4" parent="." instance=ExtResource("7_dkwk5")]
+position = Vector2(556, 380)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 0.745098)
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(62, 50)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+energy = 0.61
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("8_5ssnh")

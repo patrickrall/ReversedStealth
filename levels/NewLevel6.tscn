@@ -116,8 +116,8 @@ scale = Vector2(0.904, 0.904)
 [node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("9_i5wgq")]
 
 [node name="PathFollow2D5" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(-23.9474, -187.291)
-rotation = -0.250684
+position = Vector2(-23.9471, -187.291)
+rotation = -0.250682
 progress = 481.503
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D5" instance=ExtResource("8_equy2")]
@@ -127,7 +127,7 @@ scale = Vector2(0.904, 0.904)
 [node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D5" instance=ExtResource("9_i5wgq")]
 
 [node name="PathFollow2D6" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(212.301, -82.893)
+position = Vector2(212.301, -82.8933)
 rotation = 1.41115
 progress = 782.321
 
@@ -139,7 +139,7 @@ scale = Vector2(0.904, 0.904)
 
 [node name="PathFollow2D3" type="PathFollow2D" parent="Lights/AnimatedPath"]
 position = Vector2(133.354, -183.94)
-rotation = 0.247476
+rotation = 0.247478
 progress = 640.257
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D3" instance=ExtResource("8_equy2")]
@@ -149,8 +149,8 @@ scale = Vector2(0.904, 0.904)
 [node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D3" instance=ExtResource("9_i5wgq")]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(195.663, 220.691)
-rotation = 2.37428
+position = Vector2(195.665, 220.689)
+rotation = 2.37424
 progress = 1092.24
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("8_equy2")]
@@ -160,8 +160,8 @@ scale = Vector2(0.70034, 0.702469)
 [node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("9_i5wgq")]
 
 [node name="PathFollow2D7" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(62.8424, 264.86)
-rotation = 3.04274
+position = Vector2(62.84, 264.86)
+rotation = 3.04275
 progress = 1234.31
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D7" instance=ExtResource("8_equy2")]
@@ -181,7 +181,7 @@ scale = Vector2(0.70034, 0.702469)
 [node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D4" instance=ExtResource("9_i5wgq")]
 
 [node name="PathFollow2D8" type="PathFollow2D" parent="Lights/AnimatedPath"]
-position = Vector2(-117.404, 94.7456)
+position = Vector2(-117.404, 94.7453)
 rotation = -1.64786
 progress = 158.892
 
