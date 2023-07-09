@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd4bdtvpfy11g"]
+[gd_scene load_steps=7 format=3 uid="uid://bd4bdtvpfy11g"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_cgh8b"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_2ilgg"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_j3tx7"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_8caen"]
 [ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="5_7twsl"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="6_g5ame"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_cgh8b")
@@ -36,6 +37,9 @@ scale = Vector2(1, 28.36)
 [node name="SouthSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(355, 385)
 
+[node name="NorthSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(375, 51)
+
 [node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(58, 82)
 
@@ -46,17 +50,66 @@ position = Vector2(335, 421)
 next_scene = "res://levels/NewLevel9.tscn"
 next_spawn = "NorthSpawn"
 
+[node name="NorthGoal" parent="Goals" instance=ExtResource("3_j3tx7")]
+position = Vector2(296, 31)
+next_scene = "res://levels/NewLevel1.tscn"
+next_spawn = "SouthwestSpawn"
+
+[node name="EastGoal" parent="Goals" instance=ExtResource("3_j3tx7")]
+position = Vector2(36, 216)
+
 [node name="Label" type="Label" parent="."]
-offset_left = 309.0
-offset_top = 92.0
-offset_right = 377.0
-offset_bottom = 118.0
+offset_left = 285.0
+offset_top = 209.0
+offset_right = 353.0
+offset_bottom = 235.0
 text = "You Win!"
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 173.0
+offset_right = 93.0
+offset_bottom = 199.0
+text = "Home!
+"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 196.0
+offset_right = 617.0
+offset_bottom = 378.0
+text = "Produced By:
+Billy Rieger
+Stella Wang
+April Walker
+Patrick Rall
+Sarah Asano
+Chris Cousté"
+
 [node name="Clam" parent="." instance=ExtResource("5_7twsl")]
-position = Vector2(260, 204)
+position = Vector2(185, 356)
 unique_key = "level10clam"
 
 [node name="Clam2" parent="." instance=ExtResource("5_7twsl")]
-position = Vector2(444, 290)
+position = Vector2(405, 318)
 unique_key = "level10clam2"
+
+[node name="Coral" parent="." instance=ExtResource("6_g5ame")]
+position = Vector2(225, 17)
+rotation = -1.10689
+
+[node name="Coral2" parent="." instance=ExtResource("6_g5ame")]
+position = Vector2(223, 87)
+rotation = -2.81532
+
+[node name="Coral3" parent="." instance=ExtResource("6_g5ame")]
+position = Vector2(457, 43)
+rotation = -4.38289
+
+[node name="Coral4" parent="." instance=ExtResource("6_g5ame")]
+position = Vector2(420, 121)
+rotation = -3.25594
+
+[node name="Coral5" parent="." instance=ExtResource("6_g5ame")]
+position = Vector2(316, 114)
+rotation = -2.62851

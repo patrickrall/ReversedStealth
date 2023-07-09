@@ -35,13 +35,21 @@ position = Vector2(547, 59)
 next_scene = "res://levels/NewLevel2.tscn"
 next_spawn = "NorthwestSpawn"
 
+[node name="SouthwestGoal" parent="Goals" instance=ExtResource("3_g451x")]
+position = Vector2(53, 423)
+next_scene = "res://levels/NewLevel10.tscn"
+next_spawn = "NorthSpawn"
+
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NorthwestSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(58, 82)
 
 [node name="EastSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(526, 229)
+position = Vector2(564, 141)
+
+[node name="SouthwestSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(65, 383)
 
 [node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(58, 82)
