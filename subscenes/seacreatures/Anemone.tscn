@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://deroh5x6v85wy"]
+
+[ext_resource type="Texture2D" uid="uid://3bbyebgd8cwo" path="res://assets/anemone.png" id="1_yf85i"]
+[ext_resource type="PackedScene" uid="uid://bbl7xpl4cvt05" path="res://subscenes/KillArea.tscn" id="2_bksdn"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="3_qaqw8"]
+
+[node name="Anemone" type="Sprite2D"]
+scale = Vector2(0.284, 0.332)
+texture = ExtResource("1_yf85i")
+
+[node name="KillArea" parent="." instance=ExtResource("2_bksdn")]
+position = Vector2(166.667, -75.188)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillArea"]
+polygon = PackedVector2Array(-149.098, 107.694, -134.457, 102.693, -109.567, 78.9387, -124.208, 60.1853, -149.098, 38.9315, -191.557, 35.1809, -222.303, 55.1844, -229.623, 80.1889, -222.303, 101.443, -191.557, 106.444)
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(0, -3.01204)
+scale = Vector2(1.571, 0.872416)
+color = Color(1, 0.0470588, 0.494118, 1)
+energy = 0.28
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_qaqw8")

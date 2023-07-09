@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://xind1qbfcfsv"]
+
+[ext_resource type="Texture2D" uid="uid://dprvp5v8xbj0j" path="res://assets/sea_slug.png" id="1_aetme"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="2_bqf4j"]
+
+[node name="SeaSlug" type="Sprite2D"]
+position = Vector2(0, -1.42857)
+scale = Vector2(-0.065, 0.065)
+texture = ExtResource("1_aetme")
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(36.3635, 0)
+scale = Vector2(7.95455, 4.80519)
+color = Color(0.180392, 0.505882, 1, 1)
+energy = 0.92
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_bqf4j")

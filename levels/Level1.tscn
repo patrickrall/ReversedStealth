@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvjoc3vl4xwfg"]
+[gd_scene load_steps=20 format=3 uid="uid://bvjoc3vl4xwfg"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
@@ -11,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="9_ioi67"]
 [ext_resource type="PackedScene" uid="uid://bnyucib0lfoht" path="res://subscenes/rocks/Rock3.tscn" id="10_22qh3"]
 [ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="11_l13lh"]
-[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/AnglerFish.tscn" id="12_8attg"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="12_8attg"]
 [ext_resource type="PackedScene" uid="uid://dm2xofye3fe2c" path="res://subscenes/seacreatures/CatShark.tscn" id="13_dmwia"]
 [ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="14_yxf8s"]
+[ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="15_fcoqn"]
+[ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="16_kbyfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lndds"]
 size = Vector2(20, 484)
@@ -21,7 +23,10 @@ size = Vector2(20, 484)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttqim"]
 size = Vector2(656, 20)
 
-[node name="Level" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f371p"]
+size = Vector2(102, 58)
+
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_pgwok")
 
 [node name="WaterBackground" type="Sprite2D" parent="."]
@@ -173,3 +178,21 @@ position = Vector2(336, 273.571)
 
 [node name="ViperFish" parent="." instance=ExtResource("14_yxf8s")]
 position = Vector2(291, 428.571)
+
+[node name="Pearl" parent="." instance=ExtResource("15_fcoqn")]
+position = Vector2(447, 183.571)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
+position = Vector2(-1, -11.5714)
+shape = SubResource("RectangleShape2D_f371p")
+
+[node name="Pearl2" parent="." instance=ExtResource("15_fcoqn")]
+position = Vector2(575, 180)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(575, 170)
+shape = SubResource("RectangleShape2D_f371p")
+
+[node name="Clam" parent="." instance=ExtResource("16_kbyfb")]
+position = Vector2(302, 291)
+scale = Vector2(-0.281, 0.281)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d20m8vtr1bpq7"]
+
+[ext_resource type="Texture2D" uid="uid://k7fpc1xv4ypm" path="res://assets/pearl.png" id="1_ifi6r"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="2_4nqlr"]
+[ext_resource type="Script" path="res://src/Pearl.gd" id="2_c01k0"]
+
+[node name="Pearl" type="Area2D"]
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(-1.78846, 2.91484)
+scale = Vector2(0.299181, 0.250914)
+color = Color(0.996078, 0.678431, 0.803922, 1)
+energy = 0.1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_4nqlr")
+
+[node name="Pearl" type="Sprite2D" parent="."]
+position = Vector2(0, -1.42857)
+scale = Vector2(0.093, 0.093)
+texture = ExtResource("1_ifi6r")
+script = ExtResource("2_c01k0")
+
+[connection signal="body_entered" from="." to="Pearl" method="_on_area_2d_body_entered"]

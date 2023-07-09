@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://deh4wihx5nx3p"]
+
+[ext_resource type="Texture2D" uid="uid://dkpty5lwe2s15" path="res://assets/algae2.png" id="1_x3cu5"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="2_wsr0l"]
+
+[node name="Algae1" type="Sprite2D"]
+position = Vector2(0, -1.42857)
+scale = Vector2(0.123, 0.123)
+texture = ExtResource("1_x3cu5")
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(-19.2308, 46.7033)
+scale = Vector2(4.285, 3.59)
+color = Color(0.760784, 0.760784, 1, 1)
+energy = 0.1
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_wsr0l")

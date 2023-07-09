@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8w5xcme4yf56"]
+
+[ext_resource type="Script" path="res://src/Clam.gd" id="1_tp5ts"]
+[ext_resource type="Texture2D" uid="uid://b2rq2w0utrth" path="res://assets/giant_clam.png" id="2_osmaf"]
+[ext_resource type="Texture2D" uid="uid://b3s3mvckc5ay2" path="res://assets/giant_clam_closed.png" id="3_28004"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="3_g81ce"]
+[ext_resource type="Texture2D" uid="uid://k7fpc1xv4ypm" path="res://assets/pearl.png" id="4_m2kl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jftjw"]
+size = Vector2(693.018, 237.502)
+
+[node name="Clam" type="StaticBody2D"]
+scale = Vector2(0.281, 0.281)
+script = ExtResource("1_tp5ts")
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(6, -17)
+scale = Vector2(0.804273, 0.782293)
+color = Color(0, 0.831373, 0.501961, 1)
+energy = 0.2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_g81ce")
+
+[node name="ClamOpenCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(77, 106, 106, 60, 109, 37, 124, 25, 120, -27, 84, -104, 40, -121, -32, -123, -63, -90, -89, -76, -136, 3, -100, 72, -41, 100, 23, 124)
+
+[node name="ClamClosedCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-81.8505, 135.231, 103.203, 142.349, 135.231, 85.4093, 110.32, 42.7046, 60.4982, 14.2349, -32.0285, 14.2349, -124.555, 74.7331, -128.114, 99.6441)
+
+[node name="ClamOpen" type="Sprite2D" parent="."]
+position = Vector2(-1, -5)
+texture = ExtResource("2_osmaf")
+
+[node name="ClamClosed" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3.55872, 74.7331)
+texture = ExtResource("3_28004")
+
+[node name="Pearl" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(49.822, 67.6157)
+scale = Vector2(0.0888844, 0.0888844)
+texture = ExtResource("4_m2kl3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.80407, -8.43083)
+shape = SubResource("RectangleShape2D_jftjw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

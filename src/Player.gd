@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+var has_pearl = false : 
+	set(value):
+		has_pearl = value
+		$Pearl.visible = has_pearl
+
 
 
 func _physics_process(_delta):

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0fvquqdtscta"]
+
+[ext_resource type="Texture2D" uid="uid://c34ekdtkjc16l" path="res://assets/jellyfish.png" id="1_qvyhp"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="1_ses7o"]
+[ext_resource type="PackedScene" uid="uid://bbl7xpl4cvt05" path="res://subscenes/KillArea.tscn" id="2_jlnkq"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.11, 0.11)
+
+[node name="KillArea" parent="." instance=ExtResource("2_jlnkq")]
+position = Vector2(154.639, -237.113)
+scale = Vector2(1.39474, 1.48925)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillArea"]
+position = Vector2(-328.467, -82.3775)
+scale = Vector2(1.3181, 0.844477)
+polygon = PackedVector2Array(223.963, -4.91815, 156.67, 56.5619, -0.347153, 77.0552, -22.7781, 187.719, 55.7303, 638.573, 165.081, 773.829, 378.175, 704.151, 546.408, 470.527, 425.841, 306.581, 271.628, 27.8712)
+
+[node name="GuardLight" type="PointLight2D" parent="."]
+position = Vector2(36.3635, 0)
+scale = Vector2(7.95455, 4.80519)
+color = Color(0.72549, 0.219608, 1, 1)
+energy = 0.92
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("1_ses7o")
+
+[node name="ClamOpenCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-319.588, -273.196, -216.495, -252.577, -61.8557, -288.66, 108.247, -376.289, 113.402, -458.763, -46.3918, -551.546, -221.649, -541.237, -319.588, -448.454, -340.206, -319.588)
+
+[node name="Jellyfish" type="Sprite2D" parent="."]
+position = Vector2(170.819, 21.3523)
+texture = ExtResource("1_qvyhp")
