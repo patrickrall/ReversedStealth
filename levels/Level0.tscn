@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfvoiknkvajsw"]
+[gd_scene load_steps=9 format=3 uid="uid://cfvoiknkvajsw"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_57ivr"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_dabo8"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="4_bbf8a"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="5_6522s"]
 [ext_resource type="Texture2D" uid="uid://co74tmt65voxe" path="res://assets/background_title_1.png" id="5_g3axg"]
+[ext_resource type="PackedScene" uid="uid://bt7bv5mqw0soa" path="res://subscenes/coral/Coral1.tscn" id="6_t4g0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4yej"]
 size = Vector2(684.5, 32.5)
@@ -55,3 +58,12 @@ offset_bottom = 471.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "Get here"
 metadata/_edit_use_anchors_ = true
+
+[node name="Coral" parent="." instance=ExtResource("4_bbf8a")]
+position = Vector2(48, 475)
+
+[node name="Wall" parent="." instance=ExtResource("5_6522s")]
+position = Vector2(437, 491)
+
+[node name="Coral2" parent="." instance=ExtResource("6_t4g0q")]
+position = Vector2(217, 480)

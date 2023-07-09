@@ -1,30 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://s7n2k1hrj2ij"]
+[gd_scene load_steps=4 format=3 uid="uid://s7n2k1hrj2ij"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_1hwe8"]
-[ext_resource type="Texture2D" uid="uid://dnvo0jsah5vnh" path="res://assets/player_72ppi.png" id="2_ekkt1"]
-[ext_resource type="Material" uid="uid://bp0rj6jahn741" path="res://assets/shaders/WavyShaderMaterial.tres" id="3_3freb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2h25r"]
+[ext_resource type="Texture2D" uid="uid://bw2ftcv1b1dtp" path="res://assets/player_72ppi.png" id="2_ekkt1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ofdqv"]
-polygon = PackedVector2Array(10, 1, 10, -3, 8, -7, 3, -10, -2, -10, -6, -8, -9, -4, -10, 0, -9, 4, -7, 7, -3, 9, 1, 10, 4, 9, 7, 7, 9, 4)
+polygon = PackedVector2Array(-10, 16, 6, 19, 25, 18, 35, 11, 34, 3, 13, 1, 2, -18, 5, 1, -32, 4, -35, 12, -32, 18)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_1hwe8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_2h25r")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-color = Color(0.713726, 0, 0.396078, 1)
-polygon = PackedVector2Array(-7, -7, -9, -4, -10, 1, -8, 6, -5, 9, 0, 10, 6, 9, 10, 3, 10, -3, 7, -8, 1, -10, -4, -9)
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-visible = false
 occluder = SubResource("OccluderPolygon2D_ofdqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("3_3freb")
 scale = Vector2(0.368356, 0.354358)
 texture = ExtResource("2_ekkt1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32, 18, -10, 16, 6, 19, 25, 18, 35, 11, 34, 3, 13, 1, 2, -18, 5, 1, -32, 4, -35, 12)

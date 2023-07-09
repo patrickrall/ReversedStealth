@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://bflxr2swrv3xt"]
+[gd_scene load_steps=14 format=3 uid="uid://bflxr2swrv3xt"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
-[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="4_5yfvo"]
-[ext_resource type="Texture2D" uid="uid://dgquj6ytlbmx5" path="res://assets/water_background.png" id="5_kehxi"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="4_5yfvo"]
+[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="5_kehxi"]
 [ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_vthva"]
 [ext_resource type="PackedScene" uid="uid://ctmnrj4fb0fyj" path="res://subscenes/rocks/Rock7.tscn" id="6_ps2oj"]
 [ext_resource type="PackedScene" uid="uid://tvv2hyool4ip" path="res://subscenes/rocks/Rock4.tscn" id="7_pdyyb"]
 [ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="8_0ffhj"]
 [ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="9_ioi67"]
 [ext_resource type="PackedScene" uid="uid://bnyucib0lfoht" path="res://subscenes/rocks/Rock3.tscn" id="10_22qh3"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="11_l13lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lndds"]
 size = Vector2(20, 484)
@@ -157,3 +158,6 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "If you are lost,
  press \"home\""
 metadata/_edit_use_anchors_ = true
+
+[node name="Coral" parent="." instance=ExtResource("11_l13lh")]
+position = Vector2(116, 293)
