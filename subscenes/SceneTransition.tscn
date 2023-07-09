@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj3rcnmg3qamw"]
+[gd_scene load_steps=6 format=3 uid="uid://cj3rcnmg3qamw"]
 
 [ext_resource type="Script" path="res://src/SceneTransition.gd" id="1_nsxmm"]
+[ext_resource type="AudioStream" uid="uid://bik1s6b6glla3" path="res://assets/audio/rolereversal_bkgdtrack_depths.mp3" id="2_8xacr"]
 
 [sub_resource type="Animation" id="Animation_x5xwy"]
 resource_name = "RESET"
@@ -56,3 +57,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_u7nki")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8xacr")
+autoplay = true
