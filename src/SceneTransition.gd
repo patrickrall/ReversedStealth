@@ -5,6 +5,7 @@ const ANIM_LEN = 0.5
 func change_scene(new_scene, spawn_location):
 	# start player rotation and scaling tween
 	var player = get_tree().get_first_node_in_group("Player")
+	print(player.last_spawn)
 	var has_pearl = player.has_pearl
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
@@ -31,3 +32,4 @@ func change_scene(new_scene, spawn_location):
 
 	player.position = spawn_node.position
 	player.has_pearl = has_pearl
+	player.last_spawn = spawn_location

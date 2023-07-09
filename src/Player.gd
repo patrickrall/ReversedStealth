@@ -9,7 +9,9 @@ var has_pearl = false :
 		has_pearl = value
 		$Pearl.visible = has_pearl
 
-
+var last_spawn = "PlayerSpawn":
+	set(value):
+		last_spawn = value
 
 func _physics_process(_delta):
 	

@@ -12,9 +12,6 @@ script = ExtResource("1_pipv6")
 position = Vector2(320, 240)
 texture = ExtResource("2_vmvjs")
 
-[node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(58, 82)
-
 [node name="Walls" type="Node" parent="."]
 
 [node name="NorthWall" parent="Walls" instance=ExtResource("4_5o5aj")]
@@ -49,6 +46,9 @@ position = Vector2(235, 375)
 
 [node name="WestSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(106, 223)
+
+[node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(58, 82)
 
 [node name="Goals" type="Node" parent="."]
 

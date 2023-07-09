@@ -16,6 +16,11 @@ size = Vector2(32, 149)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_57ivr")
 
+[node name="Spawns" type="Node" parent="."]
+
+[node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(72, 424)
+
 [node name="BackgroundTitle1" type="Sprite2D" parent="."]
 position = Vector2(320, 240)
 texture = ExtResource("5_g3axg")
@@ -24,9 +29,6 @@ texture = ExtResource("5_g3axg")
 position = Vector2(549, 402)
 next_scene = "res://levels/NewLevel1.tscn"
 next_spawn = "NorthwestSpawn"
-
-[node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(72, 424)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

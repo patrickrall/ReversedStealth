@@ -13,9 +13,6 @@ script = ExtResource("1_jedu3")
 position = Vector2(320, 240)
 texture = ExtResource("2_s8uem")
 
-[node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(58, 82)
-
 [node name="Goals" type="Node" parent="."]
 
 [node name="EastGoal" parent="Goals" instance=ExtResource("3_g451x")]
@@ -30,6 +27,9 @@ position = Vector2(58, 82)
 
 [node name="EastSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(526, 229)
+
+[node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(58, 82)
 
 [node name="Walls" type="Node" parent="."]
 

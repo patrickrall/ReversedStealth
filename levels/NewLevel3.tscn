@@ -22,9 +22,6 @@ script = ExtResource("1_fo47e")
 position = Vector2(320, 240)
 texture = ExtResource("2_uvqyp")
 
-[node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(102, 35)
-
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NorthwestSpawn" type="Marker2D" parent="Spawns"]
@@ -32,6 +29,9 @@ position = Vector2(43, 91)
 
 [node name="WestSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(107, 253)
+
+[node name="PlayerSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(102, 35)
 
 [node name="Goals" type="Node" parent="."]
 
@@ -92,9 +92,7 @@ rotation = 1.44674
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="Lights" type="Node" parent="Lights"]
-
-[node name="PointLight2D2" type="PointLight2D" parent="Lights/Lights"]
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(207, 128)
 rotation = 3.13902
 scale = Vector2(0.291311, 0.291311)
@@ -102,7 +100,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("6_j48ov")
 
-[node name="PointLight2D3" type="PointLight2D" parent="Lights/Lights"]
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
 position = Vector2(43, 39)
 rotation = 3.13902
 scale = Vector2(0.291311, 0.291311)
@@ -110,7 +108,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("6_j48ov")
 
-[node name="PointLight2D5" type="PointLight2D" parent="Lights/Lights"]
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
 position = Vector2(42, 249)
 rotation = 3.13902
 scale = Vector2(0.291311, 0.291311)
@@ -118,7 +116,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("6_j48ov")
 
-[node name="PointLight2D4" type="PointLight2D" parent="Lights/Lights"]
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
 position = Vector2(500, 427)
 rotation = 3.13902
 scale = Vector2(0.15, 0.15)
