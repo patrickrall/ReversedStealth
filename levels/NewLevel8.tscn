@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7wyl3xyjm8rt"]
+[gd_scene load_steps=7 format=3 uid="uid://c7wyl3xyjm8rt"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_1w8li"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_6l5fm"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_to2fv"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_a1x3f"]
+[ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="5_n20fv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5i46t"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1w8li")
@@ -44,3 +47,11 @@ position = Vector2(58, 82)
 position = Vector2(563, 30)
 next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "SouthSpawn"
+
+[node name="Pearl" parent="." instance=ExtResource("5_n20fv")]
+position = Vector2(363, 332)
+unique_key = "level8pearl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
+rotation = -0.00132998
+shape = SubResource("RectangleShape2D_5i46t")

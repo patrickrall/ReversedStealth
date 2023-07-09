@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1gu2yv52y5e"]
+[gd_scene load_steps=21 format=3 uid="uid://d1gu2yv52y5e"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_qd3mn"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_2c664"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_jljiq"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_jd6e4"]
+[ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="5_5la2h"]
+[ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="6_to0xc"]
+[ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="7_bk31f"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="8_e7ns2"]
+[ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="9_v2hjy"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="10_j70jw"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="11_jkf4j"]
+[ext_resource type="PackedScene" uid="uid://bt7bv5mqw0soa" path="res://subscenes/coral/Coral1.tscn" id="12_2lvuy"]
+[ext_resource type="PackedScene" uid="uid://deroh5x6v85wy" path="res://subscenes/seacreatures/Anemone.tscn" id="13_lbtbk"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="14_xe3ci"]
+[ext_resource type="PackedScene" uid="uid://xind1qbfcfsv" path="res://subscenes/seacreatures/Seaslug.tscn" id="15_rbb7t"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="16_d14ik"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="17_uan6b"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="18_cxuf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8ts7"]
+size = Vector2(29, 25)
+
+[sub_resource type="Curve2D" id="Curve2D_bcfxw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 296.815, 145, 0, 0, 0, 0, 367.815, 145, 0, 0, 0, 0, 409.815, 141, 0, 0, 0, 0, 435.815, 129, 0, 0, 0, 0, 475.815, 126, 0, 0, 0, 0, 510.815, 122, 0, 0, 0, 0, 425.815, 130, 0, 0, 0, 0, 399.815, 142, 0, 0, 0, 0, 301.815, 141, 0, 0, 0, 0, 296.815, 145)
+}
+point_count = 10
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qd3mn")
@@ -52,3 +75,116 @@ next_spawn = "WestSpawn"
 position = Vector2(296, 24)
 next_scene = "res://levels/NewLevel10.tscn"
 next_spawn = "SouthSpawn"
+
+[node name="Pearl" parent="." instance=ExtResource("6_to0xc")]
+position = Vector2(46, 168)
+unique_key = "level9pearl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_w8ts7")
+
+[node name="Wall" parent="." instance=ExtResource("7_bk31f")]
+position = Vector2(524, 333)
+
+[node name="Wall2" parent="." instance=ExtResource("7_bk31f")]
+position = Vector2(310, 335)
+
+[node name="Wall3" parent="." instance=ExtResource("7_bk31f")]
+position = Vector2(306, 159)
+
+[node name="Wall4" parent="." instance=ExtResource("8_e7ns2")]
+position = Vector2(477, 154)
+
+[node name="Wall5" parent="." instance=ExtResource("9_v2hjy")]
+position = Vector2(70, 262)
+rotation = -0.713427
+
+[node name="Coral" parent="." instance=ExtResource("10_j70jw")]
+position = Vector2(38, 218)
+
+[node name="Coral2" parent="." instance=ExtResource("10_j70jw")]
+position = Vector2(123, 186)
+
+[node name="Wall6" parent="." instance=ExtResource("8_e7ns2")]
+position = Vector2(323, 305)
+
+[node name="Wall7" parent="." instance=ExtResource("8_e7ns2")]
+position = Vector2(327, 192)
+rotation = 0.307041
+
+[node name="Wall9" parent="." instance=ExtResource("8_e7ns2")]
+position = Vector2(310, 357)
+rotation = -0.0682537
+
+[node name="Clam2" parent="." instance=ExtResource("5_5la2h")]
+position = Vector2(330, 256)
+rotation = 3.14159
+scale = Vector2(0.281, -0.281)
+unique_key = "level9clam2"
+
+[node name="Wall8" parent="." instance=ExtResource("8_e7ns2")]
+position = Vector2(323, 462)
+
+[node name="Clam" parent="." instance=ExtResource("5_5la2h")]
+position = Vector2(325, 417)
+unique_key = "level9clam1"
+
+[node name="Coral3" parent="." instance=ExtResource("11_jkf4j")]
+position = Vector2(36, 447)
+
+[node name="Coral4" parent="." instance=ExtResource("11_jkf4j")]
+position = Vector2(125, 487)
+
+[node name="Coral5" parent="." instance=ExtResource("11_jkf4j")]
+position = Vector2(606, 313)
+
+[node name="Coral7" parent="." instance=ExtResource("12_2lvuy")]
+position = Vector2(201, 138)
+
+[node name="Anemone" parent="." instance=ExtResource("13_lbtbk")]
+position = Vector2(126, 394)
+
+[node name="Anemone2" parent="." instance=ExtResource("13_lbtbk")]
+position = Vector2(159, 250)
+rotation = 2.26209
+
+[node name="Anemone3" parent="." instance=ExtResource("13_lbtbk")]
+position = Vector2(499, 190)
+rotation = 3.06843
+
+[node name="AnimatedPath2" type="Path2D" parent="."]
+position = Vector2(1.185, 1)
+curve = SubResource("Curve2D_bcfxw")
+script = ExtResource("14_xe3ci")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath2"]
+position = Vector2(296.815, 145)
+
+[node name="SeaSlug" parent="AnimatedPath2/PathFollow2D" instance=ExtResource("15_rbb7t")]
+scale = Vector2(0.065, -0.065)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Algae1" parent="." instance=ExtResource("16_d14ik")]
+position = Vector2(572, 347.571)
+
+[node name="Algae2" parent="." instance=ExtResource("17_uan6b")]
+position = Vector2(625, 371.571)
+
+[node name="Algae3" parent="." instance=ExtResource("17_uan6b")]
+position = Vector2(498, 423.571)
+
+[node name="Algae4" parent="." instance=ExtResource("18_cxuf5")]
+position = Vector2(415, 356.571)
+
+[node name="Algae5" parent="." instance=ExtResource("18_cxuf5")]
+position = Vector2(391, 110.571)
+
+[node name="Algae6" parent="." instance=ExtResource("18_cxuf5")]
+position = Vector2(280, 16.5714)
+
+[node name="Algae7" parent="." instance=ExtResource("18_cxuf5")]
+position = Vector2(362, 21.5714)

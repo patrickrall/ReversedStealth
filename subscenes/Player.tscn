@@ -24,6 +24,6 @@ polygon = PackedVector2Array(-32, 18, -10, 16, 6, 19, 25, 18, 35, 11, 34, 3, 13,
 
 [node name="Pearl" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(25.6691, 17.4288)
+position = Vector2(38.8235, 8.23529)
 scale = Vector2(0.0355171, 0.0354256)
 texture = ExtResource("3_pf0d4")

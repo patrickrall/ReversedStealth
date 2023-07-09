@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd4bdtvpfy11g"]
+[gd_scene load_steps=6 format=3 uid="uid://bd4bdtvpfy11g"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_cgh8b"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_2ilgg"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_j3tx7"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_8caen"]
+[ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="5_7twsl"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_cgh8b")
@@ -44,3 +45,18 @@ position = Vector2(58, 82)
 position = Vector2(335, 421)
 next_scene = "res://levels/NewLevel9.tscn"
 next_spawn = "NorthSpawn"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 309.0
+offset_top = 92.0
+offset_right = 377.0
+offset_bottom = 118.0
+text = "You Win!"
+
+[node name="Clam" parent="." instance=ExtResource("5_7twsl")]
+position = Vector2(260, 204)
+unique_key = "level10clam"
+
+[node name="Clam2" parent="." instance=ExtResource("5_7twsl")]
+position = Vector2(444, 290)
+unique_key = "level10clam2"

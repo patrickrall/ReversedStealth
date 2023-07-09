@@ -71,6 +71,7 @@ color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [node name="Pearl" parent="." instance=ExtResource("5_rt2tg")]
 position = Vector2(504, 428)
+unique_key = "level1peal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
 position = Vector2(2.595, 1.09497)
@@ -81,6 +82,7 @@ shape = SubResource("RectangleShape2D_j3l2e")
 [node name="Clam" parent="." instance=ExtResource("6_u2hcy")]
 position = Vector2(469, 161)
 scale = Vector2(-0.281, 0.281)
+unique_key = "level1clam"
 
 [node name="Wall" parent="." instance=ExtResource("7_kecss")]
 position = Vector2(160, 142)

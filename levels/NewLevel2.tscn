@@ -98,6 +98,7 @@ position = Vector2(284, 462)
 
 [node name="Clam" parent="." instance=ExtResource("8_5qpug")]
 position = Vector2(286, 420)
+unique_key = "level2clam"
 
 [node name="Algae1" parent="." instance=ExtResource("9_2d2gy")]
 position = Vector2(77, 323.571)

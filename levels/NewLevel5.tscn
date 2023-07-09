@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjtoojtqxr5u4"]
+[gd_scene load_steps=20 format=3 uid="uid://bjtoojtqxr5u4"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pipv6"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_vmvjs"]
@@ -7,6 +7,28 @@
 [ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="5_yhby8"]
 [ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="6_uis0w"]
 [ext_resource type="PackedScene" uid="uid://ctmnrj4fb0fyj" path="res://subscenes/rocks/Rock7.tscn" id="7_sqmqo"]
+[ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="8_kxyq4"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="9_4w0tu"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="10_luybi"]
+[ext_resource type="PackedScene" uid="uid://bt7bv5mqw0soa" path="res://subscenes/coral/Coral1.tscn" id="11_2nrdf"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="12_075bc"]
+[ext_resource type="PackedScene" uid="uid://b0fvquqdtscta" path="res://subscenes/seacreatures/Jellyfish.tscn" id="13_wink5"]
+[ext_resource type="PackedScene" uid="uid://xind1qbfcfsv" path="res://subscenes/seacreatures/Seaslug.tscn" id="14_2m3yr"]
+[ext_resource type="PackedScene" uid="uid://deh4wihx5nx3p" path="res://subscenes/seacreatures/Algae2.tscn" id="15_a7cgp"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="16_22qdk"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="17_y1k4h"]
+
+[sub_resource type="Curve2D" id="Curve2D_4aedj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 502, 285, 0, 0, 0, 0, 540, 305, 0, 0, 0, 0, 589, 300, 0, 0, 0, 0, 629, 294, 0, 0, 0, 0, 502, 285, 0, 0, 0, 0, 502, 287)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_2c2e0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 211.815, 265, 0, 0, 0, 0, 265.815, 268, 0, 0, 0, 0, 299.815, 321, 0, 0, 0, 0, 292.815, 371, 0, 0, 0, 0, 235.815, 393, 0, 0, 0, 0, 209.815, 422, 0, 0, 0, 0, 249.815, 390, 0, 0, 0, 0, 293.815, 372, 0, 0, 0, 0, 300.815, 319, 0, 0, 0, 0, 266.815, 270, 0, 0, 0, 0, 211.815, 265)
+}
+point_count = 11
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_pipv6")
@@ -97,3 +119,107 @@ rotation = 1.03212
 [node name="Wall3" parent="." instance=ExtResource("7_sqmqo")]
 position = Vector2(86, 44)
 rotation = 1.03212
+
+[node name="Wall4" parent="." instance=ExtResource("8_kxyq4")]
+position = Vector2(525, 124)
+
+[node name="Coral" parent="." instance=ExtResource("9_4w0tu")]
+position = Vector2(387, 125)
+
+[node name="Coral2" parent="." instance=ExtResource("10_luybi")]
+position = Vector2(221, 343)
+rotation = 0.593188
+
+[node name="Coral3" parent="." instance=ExtResource("11_2nrdf")]
+position = Vector2(141, 26)
+
+[node name="Coral5" parent="." instance=ExtResource("11_2nrdf")]
+position = Vector2(178, 96)
+
+[node name="Coral6" parent="." instance=ExtResource("11_2nrdf")]
+position = Vector2(89, 90)
+rotation = -2.51257
+
+[node name="Coral4" parent="." instance=ExtResource("10_luybi")]
+position = Vector2(434, 299)
+
+[node name="AnimatedPath3" type="Path2D" parent="."]
+position = Vector2(12, 36)
+curve = SubResource("Curve2D_4aedj")
+script = ExtResource("12_075bc")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath3"]
+position = Vector2(502, 285)
+rotation = -0.852863
+rotates = false
+
+[node name="Jellyfishj" parent="AnimatedPath3/PathFollow2D" instance=ExtResource("13_wink5")]
+rotation = 1.07687
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="AnimatedPath3"]
+position = Vector2(600.067, 298.34)
+rotation = -0.852863
+progress = 103.423
+rotates = false
+
+[node name="Jellyfishj" parent="AnimatedPath3/PathFollow2D2" instance=ExtResource("13_wink5")]
+rotation = 1.07687
+
+[node name="AnimatedPath2" type="Path2D" parent="."]
+position = Vector2(1.185, 1)
+curve = SubResource("Curve2D_2c2e0")
+script = ExtResource("12_075bc")
+speed = 2.945
+
+[node name="PathFollow2D" type="PathFollow2D" parent="AnimatedPath2"]
+position = Vector2(211.815, 265)
+rotation = 0.0554985
+
+[node name="SeaSlug" parent="AnimatedPath2/PathFollow2D" instance=ExtResource("14_2m3yr")]
+scale = Vector2(0.065, -0.065)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Algae1" parent="." instance=ExtResource("15_a7cgp")]
+position = Vector2(444, 89.5714)
+
+[node name="Algae2" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(489, 91.5714)
+
+[node name="Algae3" parent="." instance=ExtResource("15_a7cgp")]
+position = Vector2(611, 73.5714)
+
+[node name="Algae4" parent="." instance=ExtResource("17_y1k4h")]
+position = Vector2(503, 101.571)
+
+[node name="Algae5" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(511, 19.5714)
+
+[node name="Algae6" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(139, 92.5714)
+
+[node name="Algae7" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(210, 74.5714)
+
+[node name="Algae8" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(42, 258.571)
+
+[node name="Algae9" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(84, 165.571)
+
+[node name="Coral7" parent="." instance=ExtResource("10_luybi")]
+position = Vector2(84, 360)
+
+[node name="Algae10" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(86, 289.571)
+
+[node name="Algae11" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(38, 316.571)
+
+[node name="Algae12" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(92, 132.571)
+
+[node name="Algae13" parent="." instance=ExtResource("16_22qdk")]
+position = Vector2(30, 97.5714)

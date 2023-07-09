@@ -36,9 +36,11 @@ func _physics_process(_delta):
 	if dx > 0: 
 		$Sprite2D.scale.x = abs($Sprite2D.scale.x)
 		$CollisionPolygon2D.scale.x = abs($CollisionPolygon2D.scale.x)
+		$Pearl.position.x = abs($Pearl.position.x)
 	if dx < 0: 
 		$Sprite2D.scale.x = -abs($Sprite2D.scale.x)
 		$CollisionPolygon2D.scale.x = -abs($CollisionPolygon2D.scale.x)
+		$Pearl.position.x = -abs($Pearl.position.x)
 
 	if dy > 0:
 		if $Sprite2D.scale.x > 0:
