@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/Level.gd" id="1_qyukh"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="2_4yo0q"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="3_26g52"]
-[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="4_kpadr"]
-[ext_resource type="PackedScene" uid="uid://c5ubb3rxfwlbc" path="res://subscenes/GuardLight.tscn" id="5_ixpsv"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="4_kpadr"]
+[ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="5_200p5"]
 [ext_resource type="Script" path="res://src/AnimatedPath.gd" id="5_unvsy"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_60v5h"]
@@ -57,16 +57,14 @@ speed = 10.0
 position = Vector2(-282.5, 20)
 rotation = 0.0246863
 
-[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("5_ixpsv")]
-vision_length = 0
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("5_200p5")]
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
 position = Vector2(412.018, 15.3558)
 rotation = -1.63273
 progress = 2348.56
 
-[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("5_ixpsv")]
-vision_length = 0
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("5_200p5")]
 
 [node name="Walls" type="Node" parent="."]
 
@@ -136,4 +134,4 @@ scale = Vector2(1.96, 26.8)
 position = Vector2(-86, -93)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 0.666667)
+color = Color(0, 0, 0, 1)

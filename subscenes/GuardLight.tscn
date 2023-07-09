@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5ubb3rxfwlbc"]
+[gd_scene load_steps=4 format=3 uid="uid://c5ubb3rxfwlbc"]
 
-[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="1_3yokq"]
-[ext_resource type="Script" path="res://src/GuardLight.gd" id="2_xf1il"]
-[ext_resource type="Texture2D" uid="uid://cmab4s0puym85" path="res://assets/cat_chark_asset.png" id="3_4kbhh"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="1_3yokq"]
+[ext_resource type="Texture2D" uid="uid://c6joyr1v743t4" path="res://assets/cat_chark_asset.png" id="3_4kbhh"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wujoo"]
 resource_local_to_scene = true
@@ -13,17 +12,9 @@ scale = Vector2(0.7, 0.7)
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("1_3yokq")
-script = ExtResource("2_xf1il")
-angle = 259
-vision_length = 106
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_wujoo")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-67.4243, -81.7922, 0, 0, -67.4243, 81.7922, 106, 0)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.745098, 0, 0, 0.329412)
@@ -35,4 +26,6 @@ texture = ExtResource("3_4kbhh")
 flip_h = true
 flip_v = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-67.4243, -81.7922, 0, 0, -67.4243, 81.7922, 106, 0)

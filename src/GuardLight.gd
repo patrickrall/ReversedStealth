@@ -36,18 +36,7 @@ func _ready():
 	update_occluder()
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-
-func _on_body_entered(body):
+func _on_area_2d_body_entered(body):
 	if Engine.is_editor_hint(): return
 	if body.is_in_group("Player"):
 		print(get_tree().get_current_scene().respawn_player())
-
-
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.

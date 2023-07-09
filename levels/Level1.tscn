@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bflxr2swrv3xt"]
+[gd_scene load_steps=17 format=3 uid="uid://bvjoc3vl4xwfg"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_pgwok"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_frnse"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cex2xhukj8lv5" path="res://subscenes/rocks/Rock6.tscn" id="9_ioi67"]
 [ext_resource type="PackedScene" uid="uid://bnyucib0lfoht" path="res://subscenes/rocks/Rock3.tscn" id="10_22qh3"]
 [ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="11_l13lh"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/AnglerFish.tscn" id="12_8attg"]
+[ext_resource type="PackedScene" uid="uid://dm2xofye3fe2c" path="res://subscenes/seacreatures/CatShark.tscn" id="13_dmwia"]
+[ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="14_yxf8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lndds"]
 size = Vector2(20, 484)
@@ -147,7 +150,7 @@ shape = SubResource("RectangleShape2D_ttqim")
 position = Vector2(110, 64)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0.752941, 0.729412, 0.392157)
+color = Color(0, 0.752941, 0.729412, 1)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 152.0
@@ -161,3 +164,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Coral" parent="." instance=ExtResource("11_l13lh")]
 position = Vector2(116, 293)
+
+[node name="Anglerfish" parent="." instance=ExtResource("12_8attg")]
+position = Vector2(359, 69.5714)
+
+[node name="CatShark" parent="." instance=ExtResource("13_dmwia")]
+position = Vector2(336, 273.571)
+
+[node name="ViperFish" parent="." instance=ExtResource("14_yxf8s")]
+position = Vector2(291, 428.571)

@@ -14,6 +14,8 @@ func _physics_process(_delta):
 	if dy: velocity.y = dy * SPEED
 	else: velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	if dx > 0: $Sprite2D.scale.x = abs($Sprite2D.scale.x)
+	if dx < 0: $Sprite2D.scale.x = -abs($Sprite2D.scale.x)
 
 	move_and_slide()
 

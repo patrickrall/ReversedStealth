@@ -7,9 +7,11 @@
 polygon = PackedVector2Array(-10, 16, 6, 19, 25, 18, 35, 11, 34, 3, 13, 1, 2, -18, 5, 1, -32, 4, -35, 12, -32, 18)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.85, 0.85)
 script = ExtResource("1_1hwe8")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_ofdqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
