@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd4bdtvpfy11g"]
+[gd_scene load_steps=13 format=3 uid="uid://bd4bdtvpfy11g"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_cgh8b"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_2ilgg"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_8caen"]
 [ext_resource type="PackedScene" uid="uid://c8w5xcme4yf56" path="res://subscenes/seacreatures/Clam.tscn" id="5_7twsl"]
 [ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="6_g5ame"]
+[ext_resource type="PackedScene" uid="uid://csk3bhvccd8p1" path="res://subscenes/coral/Coral3.tscn" id="6_yqq1i"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="7_o53q5"]
+[ext_resource type="PackedScene" uid="uid://bt7bv5mqw0soa" path="res://subscenes/coral/Coral1.tscn" id="9_frqeg"]
+[ext_resource type="PackedScene" uid="uid://b0fvquqdtscta" path="res://subscenes/seacreatures/Jellyfish.tscn" id="10_22ucp"]
+[ext_resource type="PackedScene" uid="uid://b0ig554at15d4" path="res://subscenes/seacreatures/Algae3.tscn" id="11_daq34"]
+[ext_resource type="PackedScene" uid="uid://c34j8w7mbsv6k" path="res://subscenes/seacreatures/Algae1.tscn" id="12_k87c8"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_cgh8b")
@@ -46,7 +52,7 @@ position = Vector2(58, 82)
 [node name="Goals" type="Node" parent="."]
 
 [node name="SouthGoal" parent="Goals" instance=ExtResource("3_j3tx7")]
-position = Vector2(335, 421)
+position = Vector2(447, 417)
 next_scene = "res://levels/NewLevel9.tscn"
 next_spawn = "NorthSpawn"
 
@@ -74,10 +80,10 @@ text = "Home!
 "
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 515.0
-offset_top = 196.0
-offset_right = 617.0
-offset_bottom = 378.0
+offset_left = 522.0
+offset_top = 35.0
+offset_right = 624.0
+offset_bottom = 217.0
 text = "Produced By:
 Billy Rieger
 Stella Wang
@@ -85,14 +91,6 @@ April Walker
 Patrick Rall
 Sarah Asano
 Chris Cousté"
-
-[node name="Clam" parent="." instance=ExtResource("5_7twsl")]
-position = Vector2(185, 356)
-unique_key = "level10clam"
-
-[node name="Clam2" parent="." instance=ExtResource("5_7twsl")]
-position = Vector2(405, 318)
-unique_key = "level10clam2"
 
 [node name="Coral" parent="." instance=ExtResource("6_g5ame")]
 position = Vector2(225, 17)
@@ -113,3 +111,80 @@ rotation = -3.25594
 [node name="Coral5" parent="." instance=ExtResource("6_g5ame")]
 position = Vector2(316, 114)
 rotation = -2.62851
+
+[node name="Coral6" parent="." instance=ExtResource("6_yqq1i")]
+position = Vector2(458, 329)
+
+[node name="Coral7" parent="." instance=ExtResource("6_yqq1i")]
+position = Vector2(581, 380)
+
+[node name="Wall" parent="." instance=ExtResource("7_o53q5")]
+position = Vector2(243, 456)
+
+[node name="Wall2" parent="." instance=ExtResource("7_o53q5")]
+position = Vector2(303, 331)
+rotation = -0.381545
+
+[node name="Clam" parent="." instance=ExtResource("5_7twsl")]
+position = Vector2(261, 409)
+unique_key = "level10clam"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(569, 269)
+rotation = 3.14159
+scale = Vector2(0.281, -0.281)
+color = Color(0.607843, 0.607843, 0.607843, 1)
+
+[node name="Clam2" parent="." instance=ExtResource("5_7twsl")]
+position = Vector2(569, 269)
+rotation = 3.14159
+scale = Vector2(0.281, -0.281)
+unique_key = "level10clam2"
+
+[node name="Coral8" parent="." instance=ExtResource("9_frqeg")]
+position = Vector2(31, 448)
+
+[node name="Coral9" parent="." instance=ExtResource("9_frqeg")]
+position = Vector2(115, 456)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("10_22ucp")]
+position = Vector2(72, 91)
+
+[node name="Algae1" parent="." instance=ExtResource("11_daq34")]
+position = Vector2(166, 295.571)
+
+[node name="Algae2" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(536, 448.571)
+
+[node name="Algae3" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(454, 363.571)
+
+[node name="Algae4" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(335, 466.571)
+
+[node name="Algae5" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(263, 321.571)
+
+[node name="Algae6" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(298, 153.571)
+
+[node name="Algae7" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(489, 190.571)
+
+[node name="Algae8" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(624, 128.571)
+
+[node name="Algae9" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(511, 47.5714)
+
+[node name="Algae10" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(117, 268.571)
+
+[node name="Algae11" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(286, 296.571)
+
+[node name="Algae12" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(353, 219.571)
+
+[node name="Algae13" parent="." instance=ExtResource("12_k87c8")]
+position = Vector2(290, 219.571)
