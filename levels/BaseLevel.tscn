@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0eu842j0hq4a"]
+
+[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="1_kkx1c"]
+[ext_resource type="Script" path="res://src/Level.gd" id="1_nqhn2"]
+[ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_q8g01"]
+[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_fd1ub"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_nqhn2")
+
+[node name="WaterBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("1_kkx1c")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(58, 82)
+
+[node name="Goal" parent="." instance=ExtResource("3_q8g01")]
+position = Vector2(577, 211)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="NorthWall" parent="Walls" instance=ExtResource("4_fd1ub")]
+position = Vector2(317, -10)
+scale = Vector2(34.24, 1)
+
+[node name="SouthWall" parent="Walls" instance=ExtResource("4_fd1ub")]
+position = Vector2(309, 490)
+scale = Vector2(34.24, 1)
+
+[node name="WestWall" parent="Walls" instance=ExtResource("4_fd1ub")]
+position = Vector2(-10, 245)
+scale = Vector2(1, 28.36)
+
+[node name="EastWall" parent="Walls" instance=ExtResource("4_fd1ub")]
+position = Vector2(650, 248)
+scale = Vector2(1, 28.36)

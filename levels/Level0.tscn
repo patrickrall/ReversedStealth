@@ -22,7 +22,8 @@ texture = ExtResource("5_g3axg")
 
 [node name="Goal" parent="." instance=ExtResource("3_dabo8")]
 position = Vector2(549, 402)
-next_scene = "res://levels/Level1.tscn"
+next_scene = "res://levels/NewLevel1.tscn"
+next_spawn = "NorthwestSpawn"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(72, 424)

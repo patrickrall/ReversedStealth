@@ -9,7 +9,7 @@ func _ready():
 func spawn_player():
 	player = load("res://subscenes/Player.tscn").instantiate()
 	player.position = $PlayerSpawn.position
-	call_deferred("add_child" ,player)
+	call_deferred("add_child", player)
 
 func respawn_player():
 	remove_child(player)

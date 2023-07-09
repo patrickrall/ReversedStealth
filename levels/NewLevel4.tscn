@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://xjlkbk287ubi"]
+
+[ext_resource type="Script" path="res://src/Level.gd" id="1_d2ln0"]
+[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_060up"]
+[ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_f047q"]
+[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_coaxg"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_d2ln0")
+
+[node name="WaterBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("2_060up")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(58, 82)
+
+[node name="NorthGoal" parent="." instance=ExtResource("3_f047q")]
+position = Vector2(310, 25)
+next_scene = "res://levels/NewLevel2.tscn"
+next_spawn = "SouthwestSpawn"
+
+[node name="NorthSpawn" type="Marker2D" parent="."]
+position = Vector2(332, 85)
+
+[node name="EastGoal" parent="." instance=ExtResource("3_f047q")]
+position = Vector2(577, 208)
+next_scene = "res://levels/NewLevel3.tscn"
+next_spawn = "WestSpawn"
+
+[node name="EastSpawn" type="Marker2D" parent="."]
+position = Vector2(542, 222)
+
+[node name="SouthGoal" parent="." instance=ExtResource("3_f047q")]
+position = Vector2(294, 395)
+next_scene = "res://levels/NewLevel5.tscn"
+next_spawn = "NortheastSpawn"
+
+[node name="SouthSpawn" type="Marker2D" parent="."]
+position = Vector2(313, 364)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="NorthWall" parent="Walls" instance=ExtResource("4_coaxg")]
+position = Vector2(317, -10)
+scale = Vector2(34.24, 1)
+
+[node name="SouthWall" parent="Walls" instance=ExtResource("4_coaxg")]
+position = Vector2(309, 490)
+scale = Vector2(34.24, 1)
+
+[node name="WestWall" parent="Walls" instance=ExtResource("4_coaxg")]
+position = Vector2(-10, 245)
+scale = Vector2(1, 28.36)
+
+[node name="EastWall" parent="Walls" instance=ExtResource("4_coaxg")]
+position = Vector2(650, 248)
+scale = Vector2(1, 28.36)

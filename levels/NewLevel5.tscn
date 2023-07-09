@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjtoojtqxr5u4"]
+
+[ext_resource type="Script" path="res://src/Level.gd" id="1_pipv6"]
+[ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_vmvjs"]
+[ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_qbioy"]
+[ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_5o5aj"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_pipv6")
+
+[node name="WaterBackground" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("2_vmvjs")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(58, 82)
+
+[node name="NortheastGoal" parent="." instance=ExtResource("3_qbioy")]
+position = Vector2(564, 21)
+next_scene = "res://levels/NewLevel4.tscn"
+next_spawn = "SouthSpawn"
+
+[node name="NortheastSpawn" type="Marker2D" parent="."]
+position = Vector2(584, 79)
+
+[node name="EastGoal" parent="." instance=ExtResource("3_qbioy")]
+position = Vector2(576, 211)
+next_scene = "res://levels/NewLevel6.tscn"
+next_spawn = "WestSpawn"
+
+[node name="EastSpawn" type="Marker2D" parent="."]
+position = Vector2(544, 231)
+
+[node name="SoutheastGoal" parent="." instance=ExtResource("3_qbioy")]
+position = Vector2(572, 418)
+next_scene = "res://levels/NewLevel7.tscn"
+next_spawn = "NorthwestSpawn"
+
+[node name="SoutheastSpawn" type="Marker2D" parent="."]
+position = Vector2(534, 436)
+
+[node name="SouthGoal" parent="." instance=ExtResource("3_qbioy")]
+position = Vector2(218, 405)
+next_scene = "res://levels/NewLevel8.tscn"
+next_spawn = "NortheastSpawn"
+
+[node name="SouthSpawn" type="Marker2D" parent="."]
+position = Vector2(235, 375)
+
+[node name="WestGoal" parent="." instance=ExtResource("3_qbioy")]
+position = Vector2(27, 202)
+next_scene = "res://levels/NewLevel9.tscn"
+next_spawn = "SoutheastSpawn"
+
+[node name="WestSpawn" type="Marker2D" parent="."]
+position = Vector2(106, 223)
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="NorthWall" parent="Walls" instance=ExtResource("4_5o5aj")]
+position = Vector2(317, -10)
+scale = Vector2(34.24, 1)
+
+[node name="SouthWall" parent="Walls" instance=ExtResource("4_5o5aj")]
+position = Vector2(309, 490)
+scale = Vector2(34.24, 1)
+
+[node name="WestWall" parent="Walls" instance=ExtResource("4_5o5aj")]
+position = Vector2(-10, 245)
+scale = Vector2(1, 28.36)
+
+[node name="EastWall" parent="Walls" instance=ExtResource("4_5o5aj")]
+position = Vector2(650, 248)
+scale = Vector2(1, 28.36)
