@@ -138,16 +138,16 @@ rotation = -1.5708
 scale = Vector2(0.286, -0.274)
 
 [node name="Path2D3" type="Path2D" parent="."]
-position = Vector2(-5, 355)
+position = Vector2(-4, 369)
 curve = SubResource("Curve2D_klblu")
 script = ExtResource("11_r30hn")
 speed = 10.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
-position = Vector2(286, 81.1406)
+position = Vector2(286, 56.4915)
 rotation = -1.5708
 scale = Vector2(1, -0.919999)
-progress = 186.198
+progress = 161.554
 rotates = false
 
 [node name="Anglerfish" parent="Path2D3/PathFollow2D" instance=ExtResource("11_3fymq")]
@@ -156,16 +156,16 @@ rotation = -1.5708
 scale = Vector2(0.286, -0.274)
 
 [node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(95, 359)
+position = Vector2(99, 369)
 curve = SubResource("Curve2D_klblu")
 script = ExtResource("11_r30hn")
 speed = 10.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
-position = Vector2(286, 121.771)
+position = Vector2(286, 101.469)
 rotation = -1.5708
 scale = Vector2(1, -0.919999)
-progress = 226.973
+progress = 206.522
 rotates = false
 
 [node name="Anglerfish" parent="Path2D4/PathFollow2D" instance=ExtResource("11_3fymq")]

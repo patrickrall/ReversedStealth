@@ -143,10 +143,10 @@ position = Vector2(84, 55.5714)
 position = Vector2(187, 44.5714)
 
 [node name="Algae15" parent="." instance=ExtResource("10_r8m3b")]
-position = Vector2(24, 79.5714)
+position = Vector2(405, 50)
 
 [node name="Algae16" parent="." instance=ExtResource("10_r8m3b")]
-position = Vector2(220, 29.5714)
+position = Vector2(321, 73)
 
 [node name="Algae17" parent="." instance=ExtResource("9_2d2gy")]
 position = Vector2(128, 119.571)
@@ -172,3 +172,12 @@ rotation = 2.12559
 
 [node name="Algae18" parent="." instance=ExtResource("10_r8m3b")]
 position = Vector2(515, 237.571)
+
+[node name="Algae19" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(472, 390)
+
+[node name="Algae20" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(532, 315)
+
+[node name="Algae21" parent="." instance=ExtResource("11_2ofc8")]
+position = Vector2(507, 155)

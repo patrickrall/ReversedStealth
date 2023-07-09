@@ -12,8 +12,9 @@ texture = ExtResource("1_uvk2e")
 
 [node name="GuardLight" type="PointLight2D" parent="."]
 position = Vector2(-86, -78.5714)
-scale = Vector2(0.21875, 0.212054)
+scale = Vector2(0.802692, 0.778121)
 color = Color(1, 1, 0.494118, 1)
+energy = 0.4
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("2_d4gja")

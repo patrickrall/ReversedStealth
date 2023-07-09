@@ -203,11 +203,11 @@ position = Vector2(33, 33)
 rotation = -0.420149
 
 [node name="Wall2" parent="." instance=ExtResource("5_dcd8j")]
-position = Vector2(615, 453)
+position = Vector2(614, 429)
 rotation = -0.420149
 
 [node name="Wall3" parent="." instance=ExtResource("5_dcd8j")]
-position = Vector2(48, 468)
+position = Vector2(49, 441)
 rotation = 0.388801
 
 [node name="Wall4" parent="." instance=ExtResource("5_dcd8j")]
@@ -218,4 +218,4 @@ rotation = 0.388801
 position = Vector2(320, -18)
 
 [node name="Wall6" parent="." instance=ExtResource("5_dcd8j")]
-position = Vector2(321, 510)
+position = Vector2(315, 491)
