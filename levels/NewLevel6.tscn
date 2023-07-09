@@ -1,12 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://djp7sqdcphpdt"]
+[gd_scene load_steps=14 format=3 uid="uid://djp7sqdcphpdt"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_c8tmw"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_ln3cn"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_p7nt2"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_ne6yf"]
+[ext_resource type="PackedScene" uid="uid://bb4rqkigteubm" path="res://subscenes/rocks/Rock8.tscn" id="5_dcd8j"]
 [ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="5_kde4i"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="6_pu2b8"]
+[ext_resource type="Script" path="res://src/AnimatedPath.gd" id="7_qb3vx"]
+[ext_resource type="PackedScene" uid="uid://c5ubb3rxfwlbc" path="res://subscenes/GuardLight.tscn" id="8_equy2"]
+[ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="9_i5wgq"]
+[ext_resource type="PackedScene" uid="uid://b0fvquqdtscta" path="res://subscenes/seacreatures/Jellyfish.tscn" id="12_mbmtx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0saa"]
+
+[sub_resource type="Curve2D" id="Curve2D_kxuay"]
+_data = {
+"points": PackedVector2Array(56.1266, 88.8303, -56.1266, -88.8303, -78.75, 247.5, -55.9499, 59.0501, 55.9499, -59.0501, -76.25, -160, -26.9702, -37.9945, 26.9702, 37.9945, 192.5, -155, 46.8458, -52.1491, -46.8458, 52.1491, 198.75, 217.5, 46.4039, 34.9134, -46.4039, -34.9134, -78.75, 247.5)
+}
+point_count = 5
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_c8tmw")
@@ -33,6 +45,14 @@ scale = Vector2(1, 28.36)
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
 
+[node name="Wall" parent="Walls" instance=ExtResource("5_dcd8j")]
+position = Vector2(283, 241)
+rotation = 1.59502
+
+[node name="Wall2" parent="Walls" instance=ExtResource("5_dcd8j")]
+position = Vector2(283, 241)
+rotation = 1.59502
+
 [node name="Spawns" type="Node" parent="."]
 
 [node name="WestSpawn" type="Marker2D" parent="Spawns"]
@@ -44,13 +64,158 @@ position = Vector2(58, 82)
 [node name="Goals" type="Node" parent="."]
 
 [node name="WestGoal" parent="Goals" instance=ExtResource("3_p7nt2")]
-position = Vector2(37, 225)
+position = Vector2(28, 229)
 next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "EastSpawn"
 
 [node name="Pearl" parent="." instance=ExtResource("5_kde4i")]
-position = Vector2(363, 332)
+position = Vector2(586, 253)
 unique_key = "level6pearl"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
 shape = SubResource("RectangleShape2D_p0saa")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(67, 239)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+energy = 0.61
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_pu2b8")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(589, 249)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+energy = 0.61
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_pu2b8")
+
+[node name="AnimatedPath" type="Path2D" parent="Lights"]
+position = Vector2(282, 211)
+scale = Vector2(0.8, 0.8)
+curve = SubResource("Curve2D_kxuay")
+script = ExtResource("7_qb3vx")
+speed = 5.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(-111.111, -68.4714)
+rotation = -1.39875
+progress = 322.62
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.904, 0.904)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D5" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(-23.9474, -187.291)
+rotation = -0.250684
+progress = 481.503
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D5" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.904, 0.904)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D5" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D6" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(212.301, -82.893)
+rotation = 1.41115
+progress = 782.321
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D6" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.904, 0.904)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D6" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(133.354, -183.94)
+rotation = 0.247476
+progress = 640.257
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D3" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.904, 0.904)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D3" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(195.663, 220.691)
+rotation = 2.37428
+progress = 1092.24
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.70034, 0.702469)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D7" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(62.8424, 264.86)
+rotation = 3.04274
+progress = 1234.31
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D7" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.70034, 0.702469)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D7" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D4" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(-78.75, 247.5)
+rotation = -2.1343
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D4" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.70034, 0.702469)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D4" instance=ExtResource("9_i5wgq")]
+
+[node name="PathFollow2D8" type="PathFollow2D" parent="Lights/AnimatedPath"]
+position = Vector2(-117.404, 94.7456)
+rotation = -1.64786
+progress = 158.892
+
+[node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D8" instance=ExtResource("8_equy2")]
+visible = false
+scale = Vector2(0.70034, 0.702469)
+
+[node name="ViperFish" parent="Lights/AnimatedPath/PathFollow2D8" instance=ExtResource("9_i5wgq")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 0.745098)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("12_mbmtx")]
+position = Vector2(369, 251)
+rotation = 0.507481
+
+[node name="Wall" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(33, 33)
+rotation = -0.420149
+
+[node name="Wall2" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(615, 453)
+rotation = -0.420149
+
+[node name="Wall3" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(48, 468)
+rotation = 0.388801
+
+[node name="Wall4" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(604, 25)
+rotation = 0.388801
+
+[node name="Wall5" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(320, -18)
+
+[node name="Wall6" parent="." instance=ExtResource("5_dcd8j")]
+position = Vector2(321, 510)

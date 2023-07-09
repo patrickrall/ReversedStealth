@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_npwgv"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="2_xwkyu"]
-[ext_resource type="Texture2D" uid="uid://yttalh4laybg" path="res://assets/LightSprite.png" id="3_wigh7"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="3_wigh7"]
 [ext_resource type="Script" path="res://src/AnimatedPath.gd" id="4_x35m6"]
 [ext_resource type="PackedScene" uid="uid://c5ubb3rxfwlbc" path="res://subscenes/GuardLight.tscn" id="5_bbd7l"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="6_tm8n2"]
@@ -60,8 +60,6 @@ progress = 322.62
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D" instance=ExtResource("5_bbd7l")]
 scale = Vector2(0.904, 0.904)
-angle = 67
-vision_length = 104
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Lights/AnimatedPath"]
 position = Vector2(201.198, 214.479)
@@ -70,8 +68,6 @@ progress = 1083.89
 
 [node name="GuardLight" parent="Lights/AnimatedPath/PathFollow2D2" instance=ExtResource("5_bbd7l")]
 scale = Vector2(0.70034, 0.702469)
-angle = 77
-vision_length = 132
 
 [node name="Walls" type="Node" parent="."]
 
