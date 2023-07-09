@@ -49,6 +49,6 @@ next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "WestSpawn"
 
 [node name="NorthGoal" parent="Goals" instance=ExtResource("3_jljiq")]
-position = Vector2(297, 30)
+position = Vector2(296, 24)
 next_scene = "res://levels/NewLevel10.tscn"
 next_spawn = "SouthSpawn"

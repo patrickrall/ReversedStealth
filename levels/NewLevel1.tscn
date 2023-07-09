@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr5kdwfuqu7bk"]
+[gd_scene load_steps=6 format=3 uid="uid://dr5kdwfuqu7bk"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_jedu3"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_s8uem"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_g451x"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_4pw3b"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="5_8xq5x"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jedu3")
@@ -47,3 +48,64 @@ scale = Vector2(1, 28.36)
 [node name="EastWall" parent="Walls" instance=ExtResource("4_4pw3b")]
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(85, 104)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(137, 275)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights"]
+position = Vector2(108, 426)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights"]
+position = Vector2(356, 113)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights"]
+position = Vector2(443, 325)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights"]
+position = Vector2(601, 248)
+rotation = 3.13902
+scale = Vector2(0.411414, 0.37131)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(554, 105)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_8xq5x")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.164706, 0.164706, 0.164706, 1)

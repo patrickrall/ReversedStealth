@@ -12,6 +12,10 @@ var has_pearl = false :
 
 
 func _physics_process(_delta):
+	
+	var fade_player = SceneTransition.get_node("AnimationPlayer") as AnimationPlayer
+	if fade_player.is_playing():
+		return
 
 	var dx = Input.get_axis("ui_left", "ui_right")
 	if dx: velocity.x = dx * SPEED

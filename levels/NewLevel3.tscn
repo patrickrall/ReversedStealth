@@ -18,10 +18,10 @@ position = Vector2(102, 35)
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NorthwestSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(42, 81)
+position = Vector2(43, 104)
 
 [node name="WestSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(96, 250)
+position = Vector2(107, 253)
 
 [node name="Goals" type="Node" parent="."]
 

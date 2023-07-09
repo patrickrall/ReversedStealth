@@ -36,7 +36,7 @@ scale = Vector2(1, 28.36)
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NorthSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(332, 85)
+position = Vector2(324, 104)
 
 [node name="EastSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(542, 222)
@@ -57,6 +57,6 @@ next_scene = "res://levels/NewLevel3.tscn"
 next_spawn = "WestSpawn"
 
 [node name="SouthGoal" parent="Goals" instance=ExtResource("3_f047q")]
-position = Vector2(294, 395)
+position = Vector2(296, 411)
 next_scene = "res://levels/NewLevel5.tscn"
 next_spawn = "NortheastSpawn"
