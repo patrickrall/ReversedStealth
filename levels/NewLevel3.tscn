@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0aff14ina0o"]
+[gd_scene load_steps=13 format=3 uid="uid://cq0aff14ina0o"]
 
 [ext_resource type="Script" path="res://src/Level.gd" id="1_fo47e"]
 [ext_resource type="Texture2D" uid="uid://8xouxtfl52au" path="res://assets/water_background.png" id="2_uvqyp"]
 [ext_resource type="PackedScene" uid="uid://bpxgaa8plcrpk" path="res://subscenes/Goal.tscn" id="3_0k2ca"]
 [ext_resource type="PackedScene" path="res://subscenes/BasicWall.tscn" id="4_4atnk"]
+[ext_resource type="PackedScene" uid="uid://dcpivs3kcctln" path="res://subscenes/rocks/Rock5.tscn" id="5_cogrf"]
+[ext_resource type="PackedScene" uid="uid://ckb3wha0qeq4y" path="res://subscenes/coral/Coral2.tscn" id="6_e6emv"]
+[ext_resource type="Texture2D" uid="uid://cm3tpablddi5f" path="res://assets/LightSprite.png" id="6_j48ov"]
+[ext_resource type="PackedScene" uid="uid://xind1qbfcfsv" path="res://subscenes/seacreatures/Seaslug.tscn" id="8_dkjgq"]
+[ext_resource type="PackedScene" uid="uid://b0fvquqdtscta" path="res://subscenes/seacreatures/Jellyfish.tscn" id="9_g137w"]
+[ext_resource type="PackedScene" uid="uid://d20m8vtr1bpq7" path="res://subscenes/seacreatures/Pearl.tscn" id="10_hd0hx"]
+[ext_resource type="PackedScene" uid="uid://hml3lw0442g4" path="res://subscenes/seacreatures/ViperFish.tscn" id="11_3xurt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mboir"]
+size = Vector2(102, 58)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_fo47e")
@@ -18,7 +28,7 @@ position = Vector2(102, 35)
 [node name="Spawns" type="Node" parent="."]
 
 [node name="NorthwestSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(43, 104)
+position = Vector2(43, 91)
 
 [node name="WestSpawn" type="Marker2D" parent="Spawns"]
 position = Vector2(107, 253)
@@ -52,3 +62,96 @@ scale = Vector2(1, 28.36)
 [node name="EastWall" parent="Walls" instance=ExtResource("4_4atnk")]
 position = Vector2(650, 248)
 scale = Vector2(1, 28.36)
+
+[node name="Wall5" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(364, 230)
+rotation = 1.63821
+
+[node name="Wall4" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(310, 163)
+rotation = -2.97271
+
+[node name="Wall3" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(231.105, 166.539)
+rotation = -0.153786
+
+[node name="Wall2" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(143, 164)
+rotation = 0.0855634
+
+[node name="Wall" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(55, 169)
+
+[node name="Wall6" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(364, 310)
+rotation = 1.6038
+
+[node name="Wall7" parent="Walls" instance=ExtResource("5_cogrf")]
+position = Vector2(378, 420)
+rotation = 1.44674
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Lights" type="Node" parent="Lights"]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights/Lights"]
+position = Vector2(207, 128)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_j48ov")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights/Lights"]
+position = Vector2(43, 39)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_j48ov")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights/Lights"]
+position = Vector2(42, 249)
+rotation = 3.13902
+scale = Vector2(0.291311, 0.291311)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_j48ov")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights/Lights"]
+position = Vector2(500, 427)
+rotation = 3.13902
+scale = Vector2(0.15, 0.15)
+energy = 0.41
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("6_j48ov")
+
+[node name="Coral" parent="." instance=ExtResource("6_e6emv")]
+position = Vector2(208, 127)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="SeaSlug" parent="." instance=ExtResource("8_dkjgq")]
+position = Vector2(485, 8)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("9_g137w")]
+position = Vector2(567, 251)
+
+[node name="Pearl" parent="." instance=ExtResource("10_hd0hx")]
+position = Vector2(499, 439)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl"]
+position = Vector2(-1, -11.5714)
+shape = SubResource("RectangleShape2D_mboir")
+
+[node name="Pearl2" parent="." instance=ExtResource("10_hd0hx")]
+position = Vector2(294.108, 445.108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pearl2"]
+position = Vector2(-1, -11.5714)
+shape = SubResource("RectangleShape2D_mboir")
+
+[node name="ViperFish" parent="." instance=ExtResource("11_3xurt")]
+position = Vector2(264, 326)
